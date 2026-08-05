@@ -55,45 +55,151 @@ body::after{
     border-radius:20px;
 }
 
-/* Навигация */
+/* ================= SIDE MENU ================= */
 
-.nav{
+
+.side-menu{
+
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:22px 70px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    backdrop-filter:blur(18px);
-    background:rgba(0,0,0,.45);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    z-index:999;
+
+    right:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:9999;
+
 }
+
+
+
+.menu-button{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+
+    background:#6b2cff;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:32px;
+
+    cursor:pointer;
+
+
+    box-shadow:
+    0 0 25px #6b2cff;
+
+
+    transition:.3s;
+
+}
+
+
+
+.menu-button:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+.menu-content{
+
+
+    margin-top:20px;
+
+
+    padding:30px;
+
+
+    width:240px;
+
+
+    border-radius:25px;
+
+
+    background:
+    rgba(0,0,0,.65);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+
+}
+
+
 
 .logo{
+
     font-size:30px;
+
     font-weight:bold;
+
     color:#b56eff;
+
     letter-spacing:5px;
-    text-shadow:0 0 15px #6b2cff;
+
+    text-shadow:
+    0 0 15px #6b2cff;
+
+
+    margin-bottom:30px;
+
 }
 
-.nav ul{
-    display:flex;
+
+
+.menu-content ul{
+
     list-style:none;
-    gap:35px;
+
 }
 
-.nav a{
+
+
+.menu-content li{
+
+    margin:20px 0;
+
+}
+
+
+
+.menu-content a{
+
     color:#fff;
+
     text-decoration:none;
+
     transition:.3s;
+
+    font-size:18px;
+
 }
 
-.nav a:hover{
+
+
+.menu-content a:hover{
+
     color:#b56eff;
+
 }
 
 /* Hero */
@@ -217,27 +323,66 @@ footer{
 
 @media(max-width:900px){
 
-.nav{
-    padding:20px;
-    flex-direction:column;
-    gap:20px;
+
+.side-menu{
+
+    right:15px;
+
 }
 
-.nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
+
+
+.menu-content{
+
+    width:200px;
+
+    padding:25px;
+
 }
+
+
+
+.menu-content a{
+
+    font-size:16px;
+
+}
+
+
+
+.menu-button{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:28px;
+
+}
+
+
 
 .hero-content h1{
+
     font-size:55px;
+
 }
+
+
 
 .hero-content p{
+
     font-size:18px;
+
 }
 
+
+
 section h2{
+
     font-size:36px;
+
 }
+
 
 }
