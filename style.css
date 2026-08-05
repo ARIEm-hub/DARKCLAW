@@ -879,3 +879,76 @@ button,
     }
 
 }
+
+#particles{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+
+
+.particle{
+
+    position:absolute;
+
+    top:-10px;
+
+    width:5px;
+    height:5px;
+
+    background:#b56eff;
+
+    border-radius:50%;
+
+
+    box-shadow:
+    0 0 10px #b56eff,
+    0 0 20px #6b2cff;
+
+
+    animation:fall linear infinite;
+
+}
+
+
+
+@keyframes fall{
+
+    from{
+
+        transform:translateY(-20px);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+}
