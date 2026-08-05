@@ -1,35 +1,26 @@
-function toggleMenu(){
+function toggleMenu() {
 
     const menu = document.querySelector(".menu-content");
 
-    if(menu.style.display === "none"){
-
-        menu.style.display = "block";
-
-    }else{
-
-        menu.style.display = "none";
-
-    }
-
+    menu.classList.toggle("active");
 }
 
-// ================= PRELOADER =================
-
-window.onload = function(){
+window.addEventListener("load", () => {
 
     const preloader = document.getElementById("preloader");
 
-    setTimeout(function(){
+    if (!preloader) return;
 
-        preloader.classList.add("hide");
+    setTimeout(() => {
 
-        setTimeout(function(){
+        preloader.style.opacity = "0";
 
-            preloader.remove();
+        setTimeout(() => {
 
-        },800);
+            preloader.style.display = "none";
 
-    },2000);
+        }, 500);
 
-}
+    }, 1500);
+
+});
