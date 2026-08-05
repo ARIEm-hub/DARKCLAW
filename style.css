@@ -398,3 +398,265 @@ section h2{
 
     display:block;
 }
+
+
+/* ==========================
+   DARKCLAW GOTHIC EFFECTS v2.0
+========================== */
+
+
+/* Плавное появление */
+
+@keyframes fadeUp {
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+.hero-content,
+section,
+.card,
+.gallery .image{
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+
+/* Улучшение логотипа */
+
+.logo{
+
+    animation:logoGlow 3s infinite;
+
+}
+
+
+@keyframes logoGlow{
+
+    0%,100%{
+
+        text-shadow:
+        0 0 15px #6b2cff;
+
+    }
+
+
+    50%{
+
+        text-shadow:
+        0 0 25px #b56eff,
+        0 0 60px #6b2cff;
+
+    }
+
+}
+
+
+
+/* Анимация кнопки меню */
+
+.menu-button{
+
+    animation:
+    menuPulse 3s infinite;
+
+}
+
+
+@keyframes menuPulse{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 25px #6b2cff;
+
+    }
+
+
+    50%{
+
+        box-shadow:
+        0 0 50px #b56eff,
+        0 0 80px #6b2cff;
+
+    }
+
+}
+
+
+
+/* Красивый hover для меню */
+
+.menu-content{
+
+    animation:
+    menuAppear .5s ease;
+
+}
+
+
+@keyframes menuAppear{
+
+    from{
+
+        opacity:0;
+        transform:
+        translateX(-30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+        transform:
+        translateX(0);
+
+    }
+
+}
+
+
+
+/* Неоновый эффект ссылок */
+
+.menu-content a:hover{
+
+    text-shadow:
+    0 0 10px #b56eff,
+    0 0 25px #6b2cff;
+
+}
+
+
+
+/* Более готические карточки */
+
+.card{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    background:
+    radial-gradient(
+    circle,
+    #6b2cff55,
+    transparent 70%
+    );
+
+
+    top:-50px;
+    right:-50px;
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+
+
+.card:hover::before{
+
+    opacity:1;
+
+}
+
+
+
+/* Плавающее свечение фона */
+
+body::before{
+
+    animation:
+    darkSmoke 12s infinite alternate;
+
+}
+
+
+
+@keyframes darkSmoke{
+
+
+    from{
+
+        transform:
+        translate(0,0);
+
+    }
+
+
+    to{
+
+        transform:
+        translate(80px,40px);
+
+    }
+
+}
+
+
+
+/* Готический эффект для заголовков */
+
+section h2{
+
+    text-shadow:
+
+    0 0 15px #6b2cff;
+
+}
+
+
+
+/* Улучшение главного текста */
+
+.hero-content h1{
+
+    animation:
+
+    titleFloat 4s infinite alternate;
+
+}
+
+
+
+@keyframes titleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateY(-10px);
+
+    }
+
+}
