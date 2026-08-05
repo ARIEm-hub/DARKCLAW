@@ -6,7 +6,7 @@ function toggleMenu(){
 
         menu.style.display = "block";
 
-    } else {
+    }else{
 
         menu.style.display = "none";
 
@@ -16,18 +16,20 @@ function toggleMenu(){
 
 // ================= PRELOADER =================
 
-window.addEventListener("load", function () {
+window.onload = function(){
 
     const preloader = document.getElementById("preloader");
 
-    setTimeout(function () {
+    setTimeout(function(){
 
         preloader.classList.add("hide");
 
-        setTimeout(function () {
+        setTimeout(function(){
+
             preloader.remove();
-        }, 700);
 
-    }, 1800);
+        },800);
 
-});
+    },2000);
+
+}
