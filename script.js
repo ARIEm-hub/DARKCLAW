@@ -13,3 +13,21 @@ function toggleMenu(){
     }
 
 }
+
+// ================= PRELOADER =================
+
+window.addEventListener("load", function () {
+
+    const preloader = document.getElementById("preloader");
+
+    setTimeout(function () {
+
+        preloader.classList.add("hide");
+
+        setTimeout(function () {
+            preloader.remove();
+        }, 700);
+
+    }, 1800);
+
+});
