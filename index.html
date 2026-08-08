@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050108">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="DARKCLAW — VRChat-сообщество, игры, творчество, аватары, миры и живое общение.">
+  <meta property="og:title" content="DARKCLAW">
+  <meta property="og:description" content="Твоя тень. Твоя стая. Твой дом.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="darkclaw-mark.webp">
+  <link rel="icon" href="darkclaw-mark.webp">
+  <link rel="stylesheet" href="./darkclaw-tabs-v1.css">
+  <title>DARKCLAW — твоя тень, твоя стая, твой дом</title>
+  <style>
+    html,body{margin:0;min-width:320px;background:#020104;color:#f3eaff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    body[data-app-loading="true"]{overflow:hidden}
+    body[data-app-loading="true"]>.app-shell{visibility:hidden}
+    .loading-screen{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#020104;isolation:isolate;overflow:hidden;transition:opacity .7s cubic-bezier(.2,.75,.25,1),visibility .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+    .loading-screen.is-closing{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.035)}
+    .loading-screen-bg{position:absolute;inset:-4%;background:linear-gradient(180deg,rgba(2,1,4,.5),rgba(3,1,6,.84)),radial-gradient(circle at 50% 42%,rgba(187,60,255,.22),transparent 29%),url("./gothic-bg.webp") center/cover no-repeat;filter:saturate(1.12) brightness(.46) blur(2px);animation:loadingBg 9s ease-in-out infinite alternate}
+    .loading-vignette{position:absolute;inset:0;background:radial-gradient(circle at center,transparent 26%,rgba(2,0,4,.35) 62%,rgba(1,0,2,.94) 100%)}
+    .loading-grid{position:absolute;inset:0;opacity:.17;background-image:linear-gradient(rgba(190,74,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(190,74,255,.08) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(circle at center,black,transparent 72%);animation:loadingGrid 15s linear infinite}
+    .loading-noise{position:absolute;inset:0;opacity:.11;background-image:repeating-linear-gradient(0deg,transparent 0 3px,rgba(232,185,255,.12) 4px);mix-blend-mode:screen;animation:loadingNoise .22s steps(2) infinite}
+    .loading-screen-inner{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;width:min(94vw,760px);padding:28px 24px;text-align:center}
+    .loading-screen-rings{position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-60%);pointer-events:none}
+    .loading-screen-rings span{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(214,92,255,.22);box-shadow:inset 0 0 30px rgba(174,45,255,.06),0 0 42px rgba(128,18,209,.1);animation:loadingSpin 24s linear infinite}
+    .loading-screen-rings span:nth-child(2){inset:44px;border-style:dashed;animation-direction:reverse;animation-duration:15s}.loading-screen-rings span:nth-child(3){inset:92px;border-style:dotted;animation-duration:10s}
+    .loading-logo-wrap{position:relative;z-index:3;display:grid;place-items:center}.loading-logo-flare{position:absolute;width:310px;height:310px;border-radius:50%;background:radial-gradient(circle,rgba(211,97,255,.3),rgba(126,17,208,.09) 44%,transparent 70%);filter:blur(10px);animation:loadingFlare 2.4s ease-in-out infinite}.loading-screen-logo{position:relative;z-index:2;width:min(300px,64vw);filter:drop-shadow(0 0 8px rgba(240,194,255,.65)) drop-shadow(0 0 36px rgba(177,43,255,.78));animation:loadingLogo 3.2s ease-in-out infinite}
+    .loading-screen-overline{position:relative;z-index:3;margin:10px 0 13px;color:#db91ff;font-size:10px;font-weight:1000;letter-spacing:.28em;text-transform:uppercase}.loading-screen h2{position:relative;z-index:3;min-height:1.05em;margin:0;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(44px,7.4vw,82px);font-style:italic;line-height:.88;letter-spacing:-.045em;text-transform:uppercase;color:#f2cfff;text-shadow:0 0 4px #d879ff,0 0 24px rgba(181,55,255,.42)}.loading-screen-copy{position:relative;z-index:3;margin:15px auto 28px;color:#b9a9c1;font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.loading-status-row{position:relative;z-index:3;display:flex;align-items:end;justify-content:space-between;width:min(430px,82vw);margin-bottom:10px}.loading-percent{color:#f0c7ff;font:1000 21px/1 monospace;letter-spacing:.08em}.loading-status-text{color:#826e8e;font-size:8px;font-weight:1000;letter-spacing:.19em;text-transform:uppercase}.loading-screen-progress{position:relative;z-index:3;width:min(430px,82vw);height:11px;padding:2px;border:1px solid rgba(214,92,255,.38);background:rgba(10,3,16,.76)}.loading-screen-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#6512bb,#cf61ff 55%,#f0bdff);box-shadow:0 0 18px rgba(213,92,255,.68)}.loading-screen-progress i{position:absolute;top:50%;width:3px;height:27px;background:#f2c9ff;box-shadow:0 0 13px 4px rgba(213,92,255,.72);transform:translate(-50%,-50%)}.loading-sequence{position:relative;z-index:3;display:flex;justify-content:space-between;gap:20px;width:min(430px,82vw);margin-top:13px}.loading-sequence span{color:#55495d;font:900 8px/1 monospace;letter-spacing:.16em}.loading-sequence span.active{color:#d67cff;text-shadow:0 0 10px rgba(205,85,255,.58)}
+  </style>
+  <noscript><style>.loading-screen{display:none!important}.app-shell{visibility:visible!important}</style></noscript>
+  <script defer src="./darkclaw-tabs-v1.js"></script>
+</head>
+<body data-app-loading="true">
+  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+    <div class="loading-screen-bg" aria-hidden="true"></div><div class="loading-vignette" aria-hidden="true"></div><div class="loading-grid" aria-hidden="true"></div><div class="loading-noise" aria-hidden="true"></div>
+    <div class="loading-screen-inner">
+      <div class="loading-screen-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="loading-logo-wrap"><span class="loading-logo-flare"></span><img class="loading-screen-logo" src="./darkclaw-mark.webp" alt="DARKCLAW"></div>
+      <p class="loading-screen-overline">DARKCLAW / SYSTEM</p><h2 id="loading-title">ПРОБУЖДАЕМ СТАЮ</h2><p class="loading-screen-copy">Твоя тень. Твоя стая. Твой дом.</p>
+      <div class="loading-status-row"><span class="loading-percent" id="loading-percent">000%</span><span class="loading-status-text" id="loading-status">ПРОБУЖДАЕМ СТАЮ</span></div>
+      <div class="loading-screen-progress" aria-hidden="true"><span id="loading-bar"></span><i id="loading-cursor"></i></div>
+      <div class="loading-sequence" aria-hidden="true"><span>DC-01</span><span>VR-24</span><span>PACK</span><span>ONLINE</span></div>
+    </div>
+  </div>
+
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" aria-label="Навигация DARKCLAW">
+      <a class="side-brand" href="#home" data-tab-link="home" aria-label="DARKCLAW — главная"><img src="./darkclaw-mark.webp" alt=""><span>DARKCLAW</span></a>
+      <nav class="tab-nav" aria-label="Разделы сайта">
+        <button class="tab-button is-active" type="button" data-tab="home"><span>01</span><b>Главная</b></button>
+        <button class="tab-button" type="button" data-tab="about"><span>02</span><b>О стае</b></button>
+        <button class="tab-button" type="button" data-tab="inside"><span>03</span><b>Внутри</b></button>
+        <button class="tab-button" type="button" data-tab="rpc"><span>04</span><b>RPC</b></button>
+        <button class="tab-button" type="button" data-tab="gallery"><span>05</span><b>Галерея</b></button>
+        <button class="tab-button" type="button" data-tab="creator"><span>06</span><b>Создатель</b></button>
+        <button class="tab-button" type="button" data-tab="contact"><span>07</span><b>Контакты</b></button>
+      </nav>
+      <div class="side-footer"><span>VRCHAT / COMMUNITY</span><i></i><span>DC / 2026</span></div>
+    </aside>
+
+    <header class="mobile-header">
+      <a class="mobile-brand" href="#home" data-tab-link="home"><img src="./darkclaw-mark.webp" alt=""><strong>DARKCLAW</strong></a>
+      <span class="mobile-status"><i></i> ONLINE</span>
+    </header>
+    <nav class="mobile-tabs" aria-label="Разделы сайта на телефоне">
+      <button class="is-active" data-tab="home" type="button">Главная</button><button data-tab="about" type="button">О стае</button><button data-tab="inside" type="button">Внутри</button><button data-tab="rpc" type="button">RPC</button><button data-tab="gallery" type="button">Галерея</button><button data-tab="creator" type="button">Создатель</button><button data-tab="contact" type="button">Контакты</button>
+    </nav>
+
+    <main class="viewport" id="viewport">
+      <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div><div class="grid-overlay" aria-hidden="true"></div>
+
+      <section class="tab-panel is-active" data-panel="home" aria-label="Главная">
+        <div class="panel-scroll hero-panel-scroll">
+          <div class="panel-topline"><span>DARKCLAW / HOME</span><span class="live-dot"><i></i> PACK ONLINE</span></div>
+          <div class="home-layout">
+            <div class="home-copy">
+              <p class="eyebrow">ТВОЯ ТЕНЬ. ТВОЯ СТАЯ. ТВОЙ ДОМ.</p>
+              <h1><span>DARK</span><em>CLAW</em></h1>
+              <p class="lead"><strong>DARKCLAW</strong> — сообщество VRChat, творчества и настоящих людей, которые понимают друг друга.</p>
+              <div class="home-actions">
+                <a class="button button-primary" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noreferrer">Вступить в Discord <b>↗</b></a>
+                <div class="support-wrap">
+                  <button class="button button-support-disabled" type="button" data-disabled-support aria-disabled="true" aria-describedby="support-tooltip"><span class="support-icon">✦</span> Тех поддержка <b>×</b></button>
+                  <span class="support-tooltip" id="support-tooltip" role="tooltip"><i></i><strong>В разработке</strong><small>Техподдержка временно недоступна</small></span>
+                </div>
+                <button class="button button-ghost" type="button" data-tab="inside">Посмотреть, что внутри <b>→</b></button>
+              </div>
+              <div class="quick-stats"><div><strong>24/7</strong><span>Комьюнити</span></div><div><strong>VR</strong><span>VRChat</span></div><div><strong>RPC</strong><span>Creator team</span></div></div>
+            </div>
+            <div class="home-visual">
+              <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+              <img src="./darkclaw-mark.webp" alt="Логотип DARKCLAW">
+              <div class="visual-tag tag-one"><small>STATUS</small><strong>ACTIVE</strong></div>
+              <div class="visual-tag tag-two"><small>NODE</small><strong>DC-01</strong></div>
+            </div>
+          </div>
+          <div class="feature-ribbon"><article><span>01</span><div><strong>Дружелюбное комьюнити</strong><p>Без токсичности и лишнего пафоса.</p></div></article><article><span>02</span><div><strong>VRChat и творчество</strong><p>Аватары, миры, идеи и помощь.</p></div></article><article><span>03</span><div><strong>Игры и ивенты</strong><p>Всегда есть, чем заняться вместе.</p></div></article><article><span>04</span><div><strong>Безопасность</strong><p>Команда рядом 24/7.</p></div></article></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="about" aria-label="О стае" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>02 / О СООБЩЕСТВЕ</span><span>PACK ARCHIVE</span></div>
+          <div class="split-heading"><div><p class="eyebrow">DARKCLAW / COMMUNITY</p><h2>НЕ ПРОСТО СЕРВЕР.<br><em>ЭТО СЕМЬЯ.</em></h2></div><p>DARKCLAW не пытается быть очередным безликим сервером. Это пространство, где люди знакомятся, играют, создают и остаются собой.</p></div>
+          <div class="about-grid"><article class="glass-card about-main"><span class="card-index">DC—01</span><h3>Твоя тень.<br>Твоя стая.</h3><p>Мы объединяем людей вокруг VRChat, игр, творчества и совместных идей. Здесь не нужно быть «идеальным участником» — достаточно уважать других и быть живым человеком.</p><div class="chips"><span>OPEN COMMUNITY</span><span>RU / CIS</span><span>24 / 7</span></div></article><article class="quote-card"><span>✦</span><blockquote>«У каждого есть место в стае. Главное — не бояться сделать первый шаг.»</blockquote></article></div>
+          <div class="values-grid"><article><span>01</span><strong>Люди</strong><p>Живое общение и новые знакомства.</p></article><article><span>02</span><strong>Творчество</strong><p>VRChat, аватары, миры и идеи.</p></article><article><span>03</span><strong>Атмосфера</strong><p>Место, где можно быть собой.</p></article></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="inside" aria-label="Что внутри" hidden>
+        <div class="panel-scroll center-panel"><div class="panel-topline"><span>03 / INNER ARCHIVE</span><span>LOCKED CONTENT</span></div><div class="coming-stage"><div class="coming-symbol">✦</div><p>DARKCLAW / INNER ARCHIVE</p><h2>СКОРО<span>...</span></h2><strong>Новые разделы уже готовятся</strong><div class="coming-line"><i></i><b>◆</b><i></i></div></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="rpc" aria-label="RPC" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>04 / CREATOR DIVISION</span><span>REDPAD CREATOR</span></div>
+          <div class="rpc-layout-new"><div class="rpc-visual-new"><div class="rpc-ring"></div><img src="./rpc-mark.webp" alt="Логотип RPC"><span>RPC / REDPAD CREATOR</span></div><div class="rpc-copy-new"><p class="eyebrow">ТВОРЧЕСКОЕ НАПРАВЛЕНИЕ</p><h2>ИДЕИ<br><em>СТАНОВЯТСЯ 3D.</em></h2><p>RedPad Creator — отдельная творческая команда внутри экосистемы DARKCLAW. Мы создаём VRChat-миры, кастомные аватары, одежду, аксессуары и другие 3D-решения.</p><div class="chips"><span>VRCHAT WORLDS</span><span>CUSTOM AVATARS</span><span>3D CONTENT</span></div><a class="button button-primary" href="https://rpc-order-website.onrender.com/" target="_blank" rel="noreferrer">Открыть сайт RPC <b>↗</b></a></div></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="gallery" aria-label="Галерея" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>05 / VISUAL ARCHIVE</span><span>GALLERY</span></div><div class="split-heading compact"><div><p class="eyebrow">НАША АТМОСФЕРА</p><h2>ВИЗУАЛЬНЫЙ<br><em>АРХИВ.</em></h2></div><p>Место под реальные скриншоты аватаров, миров, мероприятий и работ команды.</p></div>
+          <div class="gallery-grid-new"><button class="gallery-card-new large" data-gallery-index="0" type="button"><img src="./avatar-lab.svg" alt=""><span class="gallery-overlay"></span><small>01 / VRCHAT</small><strong>Avatar Lab</strong><b>↗</b></button><button class="gallery-card-new" data-gallery-index="1" type="button"><img src="./world-night.svg" alt=""><span class="gallery-overlay"></span><small>02 / WORLD</small><strong>Night World</strong><b>↗</b></button><button class="gallery-card-new" data-gallery-index="2" type="button"><img src="./event-stage.svg" alt=""><span class="gallery-overlay"></span><small>03 / EVENTS</small><strong>Community Event</strong><b>↗</b></button><button class="gallery-card-new" data-gallery-index="3" type="button"><img src="./studio-grid.svg" alt=""><span class="gallery-overlay"></span><small>04 / RPC</small><strong>Creator Studio</strong><b>↗</b></button></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="creator" aria-label="Создатель" hidden>
+        <div class="panel-scroll creator-panel"><div class="panel-topline"><span>06 / CREATOR</span><span>EXTERNAL PROFILE</span></div><div class="creator-layout"><div class="creator-logo"><img src="./darkclaw-mark.webp" alt=""><span>DC / CREATOR</span></div><div class="creator-copy"><p class="eyebrow">СОЗДАТЕЛЬ DARKCLAW</p><h2>ARI <em>Em</em></h2><p>Хотите узнать о создателе? Профиль находится на отдельном сайте и откроется только после нажатия на кнопку ниже.</p><a class="button button-primary creator-profile-link" href="https://ariem-hub.github.io/Profile-ARI-Em/" target="_blank" rel="noopener noreferrer">Открыть профиль ARI Em <b>↗</b></a><small class="safe-note">Никакого автоматического перехода — только по клику.</small></div></div></div>
+      </section>
+
+      <section class="tab-panel" data-panel="contact" aria-label="Контакты" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>07 / CONTACT</span><span>JOIN THE PACK</span></div><div class="split-heading"><div><p class="eyebrow">СТАНЬ ЧАСТЬЮ СТАИ</p><h2>ТЫ УЖЕ<br><em>ДОСТАТОЧНО БЛИЗКО.</em></h2></div><p>Зайди, осмотрись и реши сам. Никакого давления — только люди, атмосфера и возможность найти своих.</p></div>
+          <div class="contact-grid"><a class="contact-card discord" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noreferrer"><small>MAIN COMMUNITY</small><strong>Discord</strong><span>Войти в стаю ↗</span></a><a class="contact-card telegram" href="https://t.me/+TykqvD4YOsM4ZWZi" target="_blank" rel="noreferrer"><small>NEWS & CONTACT</small><strong>Telegram</strong><span>Новости ↗</span></a><div class="contact-card counter"><small>GLOBAL PAGE VIEWS</small><strong id="visit-counter-value">…</strong><span id="visit-counter" data-status="loading">Посещения</span></div></div>
+          <div class="contact-benefits"><span>01 / Новые друзья</span><span>02 / Атмосфера</span><span>03 / Впечатления</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer"><span>DARKCLAW — НЕ ПРОСТО СЕРВЕР. <b>ЭТО СЕМЬЯ.</b></span><span id="current-section-label">01 / ГЛАВНАЯ</span></footer>
+  </div>
+
+  <div class="toast" id="support-toast" role="status" aria-live="polite"><span>✦</span><div><strong>В разработке</strong><small>Техподдержка временно недоступна</small></div></div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея" hidden>
+    <button class="lightbox-backdrop" type="button" aria-label="Закрыть"></button><div class="lightbox-panel"><button class="lightbox-close" type="button" aria-label="Закрыть">×</button><div class="lightbox-image"><img id="lightbox-image" src="./avatar-lab.svg" alt=""></div><div class="lightbox-copy"><p class="eyebrow" id="lightbox-type"></p><h3 id="lightbox-title"></h3><p id="lightbox-description"></p><div class="lightbox-nav"><button id="lightbox-prev" type="button">← Назад</button><span id="lightbox-count"></span><button id="lightbox-next" type="button">Дальше →</button></div></div></div>
+  </div>
+</body>
+</html>
