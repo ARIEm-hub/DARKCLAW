@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs><pattern id="p" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#e7e0d2" stroke-opacity=".08"/></pattern><linearGradient id="g" x1="0" x2="1"><stop stop-color="#0c0c09"/><stop offset=".55" stop-color="#2e160e"/><stop offset="1" stop-color="#0d0d0a"/></linearGradient></defs>
+  <rect width="1200" height="600" fill="url(#g)"/><rect width="1200" height="600" fill="url(#p)"/>
+  <g transform="translate(470 55)"><circle cx="140" cy="230" r="190" fill="none" stroke="#e7e0d2" stroke-opacity=".19"/><circle cx="140" cy="230" r="125" fill="#e7e0d2"/><text x="140" y="267" text-anchor="middle" font-family="Arial" font-size="112" font-weight="900" fill="#0b0b09">RPC</text></g>
+  <path d="M100 430h300M800 190h280M840 420h230" stroke="#d7f66a" stroke-width="8"/>
+  <path d="M90 160h210M860 110h100" stroke="#e06b2d" stroke-width="4"/>
+  <g fill="#e7e0d2" font-family="Arial" font-size="18" font-weight="700"><text x="100" y="145">CREATIVE UNIT</text><text x="840" y="450">VRCHAT PRODUCTION</text><text x="800" y="175">WORLD / AVATAR / 3D</text></g>
+</svg>
