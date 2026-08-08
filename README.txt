@@ -7,3 +7,5 @@ GitHub Pages: Settings -> Pages -> Deploy from a branch -> main -> /(root)
 Important:
 - Tech support button is intentionally disabled and has no Telegram bot link.
 - ARI Em profile opens only after clicking the profile button.
+
+Update: Creator tab uses creator-ari.webp only inside the Creator panel.
