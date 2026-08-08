@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050108">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="DARKCLAW — VRChat-сообщество, игры, творчество, аватары, миры и живое общение.">
+  <meta property="og:title" content="DARKCLAW">
+  <meta property="og:description" content="Твоя тень. Твоя стая. Твой дом.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="darkclaw-mark.webp">
+  <link rel="icon" href="darkclaw-mark.webp">
+  <link rel="stylesheet" href="./darkclaw-tabs-v6.css">
+  <title>DARKCLAW — твоя тень, твоя стая, твой дом</title>
+  <style>
+    html,body{margin:0;min-width:320px;background:#020104;color:#f3eaff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    body[data-app-loading="true"]{overflow:hidden}
+    body[data-app-loading="true"]>.app-shell{visibility:hidden}
+    .loading-screen{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#020104;isolation:isolate;overflow:hidden;transition:opacity .7s cubic-bezier(.2,.75,.25,1),visibility .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+    .loading-screen.is-closing{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.035)}
+    .loading-screen-bg{position:absolute;inset:-4%;background:linear-gradient(180deg,rgba(2,1,4,.5),rgba(3,1,6,.84)),radial-gradient(circle at 50% 42%,rgba(187,60,255,.22),transparent 29%),url("./gothic-bg.webp") center/cover no-repeat;filter:saturate(1.12) brightness(.46) blur(2px);animation:loadingBg 9s ease-in-out infinite alternate}
+    .loading-vignette{position:absolute;inset:0;background:radial-gradient(circle at center,transparent 26%,rgba(2,0,4,.35) 62%,rgba(1,0,2,.94) 100%)}
+    .loading-grid{position:absolute;inset:0;opacity:.17;background-image:linear-gradient(rgba(190,74,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(190,74,255,.08) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(circle at center,black,transparent 72%);animation:loadingGrid 15s linear infinite}
+    .loading-noise{position:absolute;inset:0;opacity:.11;background-image:repeating-linear-gradient(0deg,transparent 0 3px,rgba(232,185,255,.12) 4px);mix-blend-mode:screen;animation:loadingNoise .22s steps(2) infinite}
+    .loading-screen-inner{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;width:min(94vw,760px);padding:28px 24px;text-align:center}
+    .loading-screen-rings{position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-60%);pointer-events:none}
+    .loading-screen-rings span{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(214,92,255,.22);box-shadow:inset 0 0 30px rgba(174,45,255,.06),0 0 42px rgba(128,18,209,.1);animation:loadingSpin 24s linear infinite}
+    .loading-screen-rings span:nth-child(2){inset:44px;border-style:dashed;animation-direction:reverse;animation-duration:15s}.loading-screen-rings span:nth-child(3){inset:92px;border-style:dotted;animation-duration:10s}
+    .loading-logo-wrap{position:relative;z-index:3;display:grid;place-items:center}.loading-logo-flare{position:absolute;width:310px;height:310px;border-radius:50%;background:radial-gradient(circle,rgba(211,97,255,.3),rgba(126,17,208,.09) 44%,transparent 70%);filter:blur(10px);animation:loadingFlare 2.4s ease-in-out infinite}.loading-screen-logo{position:relative;z-index:2;width:min(300px,64vw);filter:drop-shadow(0 0 8px rgba(240,194,255,.65)) drop-shadow(0 0 36px rgba(177,43,255,.78));animation:loadingLogo 3.2s ease-in-out infinite}
+    .loading-screen-overline{position:relative;z-index:3;margin:10px 0 13px;color:#db91ff;font-size:10px;font-weight:1000;letter-spacing:.28em;text-transform:uppercase}.loading-screen h2{position:relative;z-index:3;min-height:1.05em;margin:0;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(44px,7.4vw,82px);font-style:italic;line-height:.88;letter-spacing:-.045em;text-transform:uppercase;color:#f2cfff;text-shadow:0 0 4px #d879ff,0 0 24px rgba(181,55,255,.42)}.loading-screen-copy{position:relative;z-index:3;margin:15px auto 28px;color:#b9a9c1;font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.loading-status-row{position:relative;z-index:3;display:flex;align-items:end;justify-content:space-between;width:min(430px,82vw);margin-bottom:10px}.loading-percent{color:#f0c7ff;font:1000 21px/1 monospace;letter-spacing:.08em}.loading-status-text{color:#826e8e;font-size:8px;font-weight:1000;letter-spacing:.19em;text-transform:uppercase}.loading-screen-progress{position:relative;z-index:3;width:min(430px,82vw);height:11px;padding:2px;border:1px solid rgba(214,92,255,.38);background:rgba(10,3,16,.76)}.loading-screen-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#6512bb,#cf61ff 55%,#f0bdff);box-shadow:0 0 18px rgba(213,92,255,.68)}.loading-screen-progress i{position:absolute;top:50%;width:3px;height:27px;background:#f2c9ff;box-shadow:0 0 13px 4px rgba(213,92,255,.72);transform:translate(-50%,-50%)}.loading-sequence{position:relative;z-index:3;display:flex;justify-content:space-between;gap:20px;width:min(430px,82vw);margin-top:13px}.loading-sequence span{color:#55495d;font:900 8px/1 monospace;letter-spacing:.16em}.loading-sequence span.active{color:#d67cff;text-shadow:0 0 10px rgba(205,85,255,.58)}
+  </style>
+  <noscript><style>.loading-screen{display:none!important}.app-shell{visibility:visible!important}</style></noscript>
+  <script defer src="./darkclaw-tabs-v6.js"></script>
+</head>
+<body data-app-loading="true">
+  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+    <div class="loading-screen-bg" aria-hidden="true"></div><div class="loading-vignette" aria-hidden="true"></div><div class="loading-grid" aria-hidden="true"></div><div class="loading-noise" aria-hidden="true"></div>
+    <div class="loading-screen-inner">
+      <div class="loading-screen-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="loading-logo-wrap"><span class="loading-logo-flare"></span><img class="loading-screen-logo" src="./darkclaw-mark.webp" alt="DARKCLAW"></div>
+      <p class="loading-screen-overline">DARKCLAW / SYSTEM</p><h2 id="loading-title">ПРОБУЖДАЕМ СТАЮ</h2><p class="loading-screen-copy">Твоя тень. Твоя стая. Твой дом.</p>
+      <div class="loading-status-row"><span class="loading-percent" id="loading-percent">000%</span><span class="loading-status-text" id="loading-status">ПРОБУЖДАЕМ СТАЮ</span></div>
+      <div class="loading-screen-progress" aria-hidden="true"><span id="loading-bar"></span><i id="loading-cursor"></i></div>
+      <div class="loading-sequence" aria-hidden="true"><span>DC-01</span><span>VR-24</span><span>PACK</span><span>ONLINE</span></div>
+    </div>
+  </div>
+
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" aria-label="Навигация DARKCLAW">
+      <a class="side-brand" href="#home" data-tab-link="home" aria-label="DARKCLAW — главная"><img src="./darkclaw-mark.webp" alt=""><span>DARKCLAW</span></a>
+      <nav class="tab-nav" aria-label="Разделы сайта">
+        <button class="tab-button is-active" type="button" data-tab="home"><span>01</span><b>Главная</b></button>
+        <button class="tab-button" type="button" data-tab="about"><span>02</span><b>О стае</b></button>
+        <button class="tab-button" type="button" data-tab="inside"><span>03</span><b>Внутри</b></button>
+        <button class="tab-button" type="button" data-tab="rpc"><span>04</span><b>RPC</b></button>
+        <button class="tab-button" type="button" data-tab="gallery"><span>05</span><b>Галерея</b></button>
+        <button class="tab-button" type="button" data-tab="news"><span>06</span><b>Новости</b></button>
+        <button class="tab-button" type="button" data-tab="team"><span>07</span><b>Команда</b></button>
+        <button class="tab-button" type="button" data-tab="events"><span>08</span><b>Ивенты</b></button>
+        <button class="tab-button" type="button" data-tab="codex"><span>09</span><b>Кодекс</b></button>
+        <button class="tab-button" type="button" data-tab="creator"><span>10</span><b>Создатель</b></button>
+        <button class="tab-button" type="button" data-tab="contact"><span>11</span><b>Контакты</b></button>
+        <button class="tab-button" type="button" data-tab="archive"><span>12</span><b>Архив</b></button>
+      </nav>
+      <div class="side-footer"><span>VRCHAT / COMMUNITY</span><i></i><span>DC / 2026</span></div>
+    </aside>
+
+    <header class="mobile-header">
+      <a class="mobile-brand" href="#home" data-tab-link="home"><img src="./darkclaw-mark.webp" alt=""><strong>DARKCLAW</strong></a>
+      <span class="mobile-status"><i></i> ONLINE</span>
+    </header>
+    <nav class="mobile-tabs" aria-label="Разделы сайта на телефоне">
+      <button class="is-active" data-tab="home" type="button">Главная</button><button data-tab="about" type="button">О стае</button><button data-tab="inside" type="button">Внутри</button><button data-tab="rpc" type="button">RPC</button><button data-tab="gallery" type="button">Галерея</button><button data-tab="news" type="button">Новости</button><button data-tab="team" type="button">Команда</button><button data-tab="events" type="button">Ивенты</button><button data-tab="codex" type="button">Кодекс</button><button data-tab="creator" type="button">Создатель</button><button data-tab="contact" type="button">Контакты</button><button data-tab="archive" type="button">Архив</button>
+    </nav>
+
+    <main class="viewport" id="viewport">
+      <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div><div class="grid-overlay" aria-hidden="true"></div>
+
+      <section class="tab-panel is-active" data-panel="home" aria-label="Главная">
+        <div class="panel-scroll hero-panel-scroll">
+          <div class="panel-topline"><span>DARKCLAW / HOME</span><span class="live-dot"><i></i> PACK ONLINE</span></div>
+          <div class="home-layout">
+            <div class="home-copy">
+              <p class="eyebrow">ТВОЯ ТЕНЬ. ТВОЯ СТАЯ. ТВОЙ ДОМ.</p>
+              <h1><span>DARK</span><em>CLAW</em></h1>
+              <p class="lead"><strong>DARKCLAW</strong> — сообщество VRChat, творчества и настоящих людей, которые понимают друг друга.</p>
+              <div class="home-actions">
+                <a class="button button-primary" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noreferrer">Вступить в Discord <b>↗</b></a>
+                <div class="support-wrap">
+                  <button class="button button-support-disabled" type="button" data-disabled-support aria-disabled="true" aria-describedby="support-tooltip"><span class="support-icon">✦</span> Тех поддержка <b>×</b></button>
+                  <span class="support-tooltip" id="support-tooltip" role="tooltip"><i></i><strong>В разработке</strong><small>Техподдержка временно недоступна</small></span>
+                </div>
+                <button class="button button-ghost" type="button" data-tab="inside">Посмотреть, что внутри <b>→</b></button>
+                <button class="button button-system" type="button" data-open-palette><span>⌘</span> Быстрый поиск <b>Ctrl+K</b></button>
+              </div>
+              <div class="quick-stats"><div><strong>24/7</strong><span>Комьюнити</span></div><div><strong>VR</strong><span>VRChat</span></div><div><strong>RPC</strong><span>Creator team</span></div></div>
+            </div>
+            <div class="home-visual">
+              <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+              <img src="./darkclaw-mark.webp" alt="Логотип DARKCLAW">
+              <div class="visual-tag tag-one"><small>STATUS</small><strong>ACTIVE</strong></div>
+              <div class="visual-tag tag-two"><small>NODE</small><strong>DC-01</strong></div>
+            </div>
+          </div>
+          <div class="feature-ribbon"><article><span>01</span><div><strong>Дружелюбное комьюнити</strong><p>Без токсичности и лишнего пафоса.</p></div></article><article><span>02</span><div><strong>VRChat и творчество</strong><p>Аватары, миры, идеи и помощь.</p></div></article><article><span>03</span><div><strong>Игры и ивенты</strong><p>Всегда есть, чем заняться вместе.</p></div></article><article><span>04</span><div><strong>Безопасность</strong><p>Команда рядом 24/7.</p></div></article></div>
+          <div class="command-center">
+            <button type="button" class="command-card tilt-card" data-tab="news"><small>SIGNAL / 01</small><strong>UPDATE v6.0</strong><span>Смотреть изменения <b>→</b></span></button>
+            <button type="button" class="command-card tilt-card" data-tab="events"><small>EVENT NODE / TBA</small><strong>БЛИЖАЙШИЙ ИВЕНТ</strong><span>Открыть терминал <b>→</b></span></button>
+            <button type="button" class="command-card tilt-card" data-tab="team"><small>PACK / STRUCTURE</small><strong>КОМАНДА СТАИ</strong><span>Посмотреть роли <b>→</b></span></button>
+            <div class="command-card command-status tilt-card"><small>SYSTEM / STATUS</small><strong>SUPPORT: DEV</strong><span><i></i> Основные системы активны</span></div>
+          </div>
+          <div class="v5-dashboard">
+            <article class="system-board tilt-card">
+              <div class="board-head"><span>DC / COMMAND CENTER</span><b>LIVE MATRIX</b></div>
+              <div class="status-matrix">
+                <div><span class="status-led online"></span><small>CORE</small><strong>ONLINE</strong></div>
+                <div><span class="status-led online"></span><small>DISCORD</small><strong>ACTIVE</strong></div>
+                <div><span class="status-led dev"></span><small>SUPPORT</small><strong>DEV</strong></div>
+                <div><span class="status-led standby"></span><small>EVENTS</small><strong>STANDBY</strong></div>
+              </div>
+              <div class="system-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="discord-preview tilt-card">
+              <div class="discord-mark">DC</div>
+              <div><small>MAIN COMMUNITY</small><strong>DARKCLAW / DISCORD</strong><p>Главная точка общения стаи. Заходи, смотри атмосферу и знакомься.</p></div>
+              <a href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noreferrer">ОТКРЫТЬ <b>↗</b></a>
+            </article>
+            <article class="quote-terminal tilt-card"><small>PACK VOICE / RANDOM SIGNAL</small><blockquote id="pack-quote">«Твоя тень не обязана идти одна.»</blockquote><button id="quote-refresh" type="button">НОВЫЙ СИГНАЛ ↻</button></article>
+          </div>
+
+          <div class="section-divider v6-divider"><span>DARKCLAW NETWORK</span><i></i><b>INTERACTIVE / DC-NET</b></div>
+          <div class="v6-network-layout">
+            <article class="network-map tilt-card" aria-label="Интерактивная карта DARKCLAW">
+              <div class="network-grid" aria-hidden="true"></div>
+              <div class="network-core"><img src="./darkclaw-mark.webp" alt=""><span>DC</span><strong>CORE</strong></div>
+              <button class="network-node node-discord" type="button" data-network-tab="contact"><i></i><small>NODE-01</small><strong>DISCORD</strong><span>ACTIVE</span></button>
+              <button class="network-node node-rpc" type="button" data-network-tab="rpc"><i></i><small>NODE-02</small><strong>RPC</strong><span>ONLINE</span></button>
+              <button class="network-node node-events" type="button" data-network-tab="events"><i></i><small>NODE-03</small><strong>EVENTS</strong><span>STANDBY</span></button>
+              <button class="network-node node-team" type="button" data-network-tab="team"><i></i><small>NODE-04</small><strong>PACK</strong><span>ACTIVE</span></button>
+              <button class="network-node node-archive" type="button" data-network-tab="archive"><i></i><small>NODE-05</small><strong>VAULT</strong><span>OPEN</span></button>
+              <svg class="network-lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true"><path d="M500 260 L180 120 M500 260 L820 110 M500 260 L165 410 M500 260 L830 405 M500 260 L500 475"/></svg>
+              <div class="network-scan" aria-hidden="true"></div>
+            </article>
+            <div class="v6-side-stack">
+              <article class="activity-feed tilt-card">
+                <div class="board-head"><span>LIVE ACTIVITY</span><b>LOCAL SIGNAL</b></div>
+                <div class="activity-list" id="activity-list" aria-live="polite">
+                  <div><time>NOW</time><i></i><p><strong>COMMAND CENTER</strong><span>Система v6 инициализирована</span></p></div>
+                  <div><time>—</time><i></i><p><strong>PACK NETWORK</strong><span>Ожидание действий пользователя</span></p></div>
+                  <div><time>—</time><i></i><p><strong>SHADOW LINK</strong><span>Скрытый узел доступен</span></p></div>
+                </div>
+              </article>
+              <article class="shortcut-board tilt-card">
+                <div class="board-head"><span>QUICK SYSTEMS</span><b>SHORTCUTS</b></div>
+                <button type="button" data-open-palette><kbd>CTRL</kbd><kbd>K</kbd><span><strong>COMMAND PALETTE</strong><small>Поиск по сайту</small></span></button>
+                <button type="button" data-open-terminal><kbd>CTRL</kbd><kbd>~</kbd><span><strong>TERMINAL</strong><small>Командная строка DARKCLAW</small></span></button>
+                <button type="button" data-network-tab="archive"><kbd>DC</kbd><kbd>06</kbd><span><strong>ARCHIVE VAULT</strong><small>История и версии</small></span></button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="about" aria-label="О стае" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>02 / О СООБЩЕСТВЕ</span><span>PACK ARCHIVE</span></div>
+          <div class="split-heading"><div><p class="eyebrow">DARKCLAW / COMMUNITY</p><h2>НЕ ПРОСТО СЕРВЕР.<br><em>ЭТО СЕМЬЯ.</em></h2></div><p>DARKCLAW не пытается быть очередным безликим сервером. Это пространство, где люди знакомятся, играют, создают и остаются собой.</p></div>
+          <div class="about-grid"><article class="glass-card about-main"><span class="card-index">DC—01</span><h3>Твоя тень.<br>Твоя стая.</h3><p>Мы объединяем людей вокруг VRChat, игр, творчества и совместных идей. Здесь не нужно быть «идеальным участником» — достаточно уважать других и быть живым человеком.</p><div class="chips"><span>OPEN COMMUNITY</span><span>RU / CIS</span><span>24 / 7</span></div></article><article class="quote-card"><span>✦</span><blockquote>«У каждого есть место в стае. Главное — не бояться сделать первый шаг.»</blockquote></article></div>
+          <div class="values-grid"><article class="tilt-card"><span>01</span><strong>Люди</strong><p>Живое общение и новые знакомства.</p></article><article class="tilt-card"><span>02</span><strong>Творчество</strong><p>VRChat, аватары, миры и идеи.</p></article><article class="tilt-card"><span>03</span><strong>Атмосфера</strong><p>Место, где можно быть собой.</p></article></div>
+          <div class="section-divider"><span>PACK RANK SYSTEM</span><i></i><b>05 LEVELS</b></div>
+          <div class="rank-grid">
+            <article class="rank-card tilt-card"><small>R-01</small><div class="rank-glyph">◇</div><strong>MEMBER</strong><p>Основной участник стаи.</p></article>
+            <article class="rank-card tilt-card"><small>R-02</small><div class="rank-glyph">◆</div><strong>ACTIVE</strong><p>Постоянный движ и участие.</p></article>
+            <article class="rank-card tilt-card"><small>R-03</small><div class="rank-glyph">✦</div><strong>VETERAN</strong><p>Проверенный временем участник.</p></article>
+            <article class="rank-card tilt-card"><small>R-04</small><div class="rank-glyph">◈</div><strong>STAFF</strong><p>Команда и ответственность.</p></article>
+            <article class="rank-card founder tilt-card"><small>R-05</small><div class="rank-glyph">♢</div><strong>FOUNDER</strong><p>Создатель DARKCLAW.</p></article>
+          </div>
+          <div class="section-divider"><span>DARKCLAW TIMELINE</span><i></i><b>ARCHIVE</b></div>
+          <div class="history-line">
+            <article><span>01</span><div><small>ORIGIN</small><strong>РОЖДЕНИЕ ИДЕИ</strong><p>Точка, с которой началась стая.</p></div></article>
+            <article><span>02</span><div><small>GROWTH</small><strong>ПЕРВЫЕ УЧАСТНИКИ</strong><p>Комьюнити получает характер.</p></div></article>
+            <article><span>03</span><div><small>RPC</small><strong>ТВОРЧЕСКОЕ НАПРАВЛЕНИЕ</strong><p>Аватары, миры и 3D-проекты.</p></div></article>
+            <article class="current"><span>04</span><div><small>NOW / 2026</small><strong>COMMAND CENTER v6</strong><p>Новая структура и следующая глава.</p></div></article>
+          </div>
+          <div class="section-divider"><span>ACHIEVEMENT SYSTEM</span><i></i><b>BADGES / PACK</b></div>
+          <div class="achievement-grid">
+            <article class="achievement-card unlocked tilt-card"><span>◆</span><div><small>A-001 / SYSTEM</small><strong>FOUNDING SIGNAL</strong><p>Базовый знак создателя экосистемы DARKCLAW.</p></div><b>UNLOCKED</b></article>
+            <article class="achievement-card tilt-card"><span>✦</span><div><small>A-002 / MEMBER</small><strong>OG MEMBER</strong><p>Для участника раннего состава стаи.</p></div><b>LOCKED</b></article>
+            <article class="achievement-card tilt-card"><span>◈</span><div><small>A-003 / EVENT</small><strong>NIGHT RUNNER</strong><p>Для активного участника ивентов.</p></div><b>LOCKED</b></article>
+            <article class="achievement-card tilt-card"><span>◇</span><div><small>A-004 / CREATIVE</small><strong>VOID MAKER</strong><p>Для автора заметной работы DARKCLAW.</p></div><b>LOCKED</b></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="inside" aria-label="Что внутри" hidden>
+        <div class="panel-scroll center-panel"><div class="panel-topline"><span>03 / INNER ARCHIVE</span><span>LOCKED CONTENT</span></div><div class="coming-stage"><div class="coming-symbol">✦</div><p>DARKCLAW / INNER ARCHIVE</p><h2>СКОРО<span>...</span></h2><strong>Новые разделы уже готовятся</strong><div class="coming-line"><i></i><b>◆</b><i></i></div></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="rpc" aria-label="RPC" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>04 / CREATOR DIVISION</span><span>REDPAD CREATOR</span></div>
+          <div class="rpc-layout-new"><div class="rpc-visual-new"><div class="rpc-ring"></div><img src="./rpc-mark.webp" alt="Логотип RPC"><span>RPC / REDPAD CREATOR</span></div><div class="rpc-copy-new"><p class="eyebrow">ТВОРЧЕСКОЕ НАПРАВЛЕНИЕ</p><h2>ИДЕИ<br><em>СТАНОВЯТСЯ 3D.</em></h2><p>RedPad Creator — отдельная творческая команда внутри экосистемы DARKCLAW. Мы создаём VRChat-миры, кастомные аватары, одежду, аксессуары и другие 3D-решения.</p><div class="chips"><span>VRCHAT WORLDS</span><span>CUSTOM AVATARS</span><span>3D CONTENT</span></div><a class="button button-primary" href="https://rpc-order-website.onrender.com/" target="_blank" rel="noreferrer">Открыть сайт RPC <b>↗</b></a></div></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="gallery" aria-label="Галерея" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>05 / VISUAL ARCHIVE</span><span>GALLERY</span></div><div class="split-heading compact"><div><p class="eyebrow">НАША АТМОСФЕРА</p><h2>ВИЗУАЛЬНЫЙ<br><em>АРХИВ.</em></h2></div><p>Место под реальные скриншоты аватаров, миров, мероприятий и работ команды.</p></div>
+          <div class="gallery-grid-new"><button class="gallery-card-new large" data-gallery-index="0" type="button"><img src="./avatar-lab.svg" alt=""><span class="gallery-overlay"></span><small>01 / VRCHAT</small><strong>Avatar Lab</strong><b>↗</b></button><button class="gallery-card-new" data-gallery-index="1" type="button"><img src="./world-night.svg" alt=""><span class="gallery-overlay"></span><small>02 / WORLD</small><strong>Night World</strong><b>↗</b></button><button class="gallery-card-new" data-gallery-index="2" type="button"><img src="./event-stage.svg" alt=""><span class="gallery-overlay"></span><small>03 / EVENTS</small><strong>Community Event</strong><b>↗</b></button><button class="gallery-card-new" data-gallery-index="3" type="button"><img src="./studio-grid.svg" alt=""><span class="gallery-overlay"></span><small>04 / RPC</small><strong>Creator Studio</strong><b>↗</b></button></div>
+        </div>
+      </section>
+
+
+      <section class="tab-panel" data-panel="news" aria-label="Новости" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>06 / SIGNAL FEED</span><span>CHANGELOG / LIVE</span></div>
+          <div class="split-heading compact"><div><p class="eyebrow">DARKCLAW / SIGNAL</p><h2>НОВОСТИ<br><em>И ОБНОВЛЕНИЯ.</em></h2></div><p>Короткий журнал того, что меняется внутри DARKCLAW. Без километрового списка — только важное.</p></div>
+          <div class="news-grid">
+            <article class="news-card featured"><div class="news-meta"><span>08.08.2026</span><b>v6.0 / LIVE</b></div><h3>NETWORK OS / v6</h3><p>Добавлены интерактивная карта узлов, Command Palette, DC-SHELL терминал, Archive Vault, достижения, локальная лента действий и улучшенный Shadow Node.</p><div class="news-tags"><span>UI</span><span>NAVIGATION</span><span>MOBILE</span></div></article>
+            <article class="news-card"><div class="news-meta"><span>STATUS</span><b>DEV</b></div><h3>ТЕХПОДДЕРЖКА</h3><p>Кнопка поддержки временно заблокирована. Интерфейс уже готов и покажет статус «В разработке».</p><div class="signal-meter"><i style="--p:42%"></i></div></article>
+            <article class="news-card"><div class="news-meta"><span>INNER ARCHIVE</span><b>LOCKED</b></div><h3>ВНУТРЕННИЙ АРХИВ</h3><p>Раздел сохранён за будущим контентом. Пока внутри остаётся неоновое «СКОРО...».</p><div class="news-tags"><span>SOON</span><span>ARCHIVE</span></div></article>
+            <article class="news-card"><div class="news-meta"><span>CREATOR</span><b>EXTERNAL</b></div><h3>ПРОФИЛЬ ARI Em</h3><p>Профиль создателя остаётся отдельным сайтом и открывается исключительно по ручному нажатию.</p><button class="text-link" type="button" data-tab="creator">К создателю →</button></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="team" aria-label="Команда" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>07 / PACK STRUCTURE</span><span>TEAM MATRIX</span></div>
+          <div class="split-heading compact"><div><p class="eyebrow">КТО ДЕРЖИТ СТАЮ</p><h2>КОМАНДА<br><em>DARKCLAW.</em></h2></div><p>Здесь можно показывать состав, роли и людей, которые отвечают за разные направления. Никаких выдуманных участников — только реальные данные по мере добавления.</p></div>
+          <div class="team-grid">
+            <article class="team-card team-creator tilt-card"><img src="./creator-ari.webp" alt="ARI Em"><div class="team-shade"></div><span>01 / CREATOR</span><h3>ARI Em</h3><p>Создатель DARKCLAW</p><button type="button" data-tab="creator">Открыть профиль внутри сайта →</button></article>
+            <article class="team-card role-card tilt-card"><span>02 / STAFF</span><div class="role-glyph">◆</div><h3>МОДЕРАЦИЯ</h3><p>Состав будет добавлен позже.</p><b>WAITING FOR DATA</b></article>
+            <article class="team-card role-card tilt-card"><span>03 / EVENTS</span><div class="role-glyph">✦</div><h3>EVENT TEAM</h3><p>Организация встреч и активностей.</p><b>FORMATION</b></article>
+            <article class="team-card role-card tilt-card"><span>04 / CONTENT</span><div class="role-glyph">◈</div><h3>CREATIVE UNIT</h3><p>Контент, визуал и развитие проекта.</p><b>FORMATION</b></article>
+          </div>
+          <div class="section-divider"><span>HALL OF FAME</span><i></i><b>RECOGNITION NODE</b></div>
+          <div class="hall-grid">
+            <article class="hall-card tilt-card"><span>✦</span><small>OG MEMBER</small><strong>МЕСТО СВОБОДНО</strong><p>Для участника, который был со стаей с ранних этапов.</p></article>
+            <article class="hall-card tilt-card"><span>◆</span><small>EVENT LEGEND</small><strong>МЕСТО СВОБОДНО</strong><p>Для человека, который делает ивенты незабываемыми.</p></article>
+            <article class="hall-card tilt-card"><span>◈</span><small>CREATIVE CORE</small><strong>МЕСТО СВОБОДНО</strong><p>Для автора сильных работ и визуала DARKCLAW.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="events" aria-label="Ивенты" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>08 / EVENT TERMINAL</span><span>SCHEDULE / TBA</span></div>
+          <div class="event-hero"><div><p class="eyebrow">БЛИЖАЙШИЙ СИГНАЛ</p><h2>EVENT<br><em>UNKNOWN.</em></h2><p>Дата следующего ивента ещё не объявлена. Как только появится событие, этот экран можно превратить в полноценную афишу с таймером и деталями.</p></div><div class="event-radar"><span></span><span></span><i>?</i><b>TBA</b></div></div>
+          <div class="event-types"><article><span>01</span><strong>VRCHAT MEET</strong><p>Встречи стаи и совместные миры.</p></article><article><span>02</span><strong>GAME NIGHT</strong><p>Игровые вечера вне VRChat.</p></article><article><span>03</span><strong>SHOWCASE</strong><p>Показы аватаров, миров и работ.</p></article></div>
+          <div class="event-countdown" id="event-countdown" data-event-time=""><div><small>DAYS</small><strong data-count="days">--</strong></div><span>:</span><div><small>HOURS</small><strong data-count="hours">--</strong></div><span>:</span><div><small>MIN</small><strong data-count="minutes">--</strong></div><span>:</span><div><small>SEC</small><strong data-count="seconds">--</strong></div><b id="event-countdown-label">ОЖИДАЕМ ДАТУ</b></div><div class="event-note"><i></i><div><small>EVENT SYSTEM</small><strong>КАЛЕНДАРЬ ОЖИДАЕТ ПЕРВОГО АНОНСА</strong></div><span>STANDBY</span></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="codex" aria-label="Кодекс" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>09 / PACK CODEX</span><span>RULES / FAQ</span></div>
+          <div class="split-heading compact"><div><p class="eyebrow">ПРИНЦИПЫ СТАИ</p><h2>КОДЕКС<br><em>DARKCLAW.</em></h2></div><p>Базовые правила поведения и быстрые ответы. Позже текст можно заменить на ваш полноценный официальный регламент.</p></div>
+          <div class="codex-layout"><div class="rules-list"><article><span>01</span><div><strong>УВАЖЕНИЕ К ЛЮДЯМ</strong><p>Без травли, намеренной токсичности и постоянных провокаций.</p></div></article><article><span>02</span><div><strong>ЛИЧНЫЕ ГРАНИЦЫ</strong><p>Не выносить чужую личную информацию и приватные разговоры без согласия.</p></div></article><article><span>03</span><div><strong>НЕ ЛОМАТЬ АТМОСФЕРУ</strong><p>Споры решаются без превращения общего пространства в постоянный конфликт.</p></div></article><article><span>04</span><div><strong>ЗДРАВЫЙ СМЫСЛ</strong><p>Если ситуация не описана отдельным пунктом, это не делает вредное поведение нормальным.</p></div></article></div>
+            <div class="faq-stack"><details open><summary>Где проходит основное общение?<b>+</b></summary><p>Основной вход в сообщество сейчас ведёт через Discord. Ссылки находятся на главной и во вкладке «Контакты».</p></details><details><summary>Что с техподдержкой?<b>+</b></summary><p>Она временно отключена и помечена статусом «В разработке».</p></details><details><summary>Где смотреть работы и атмосферу?<b>+</b></summary><p>Во вкладке «Галерея». Позже туда можно загрузить реальные скриншоты сообщества.</p></details><details><summary>Где профиль создателя?<b>+</b></summary><p>Во вкладке «Создатель». Внешний профиль ARI Em открывается только после нажатия кнопки.</p></details></div></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="creator" aria-label="Создатель" hidden>
+        <div class="panel-scroll creator-panel"><div class="panel-topline"><span>10 / CREATOR</span><span>EXTERNAL PROFILE</span></div><div class="creator-layout"><div class="creator-logo creator-photo"><img src="./creator-ari.webp" alt="ARI Em — создатель DARKCLAW"><span>DC / CREATOR</span></div><div class="creator-copy"><p class="eyebrow">СОЗДАТЕЛЬ DARKCLAW</p><h2>ARI <em>Em</em></h2><p>Хотите узнать о создателе? Профиль находится на отдельном сайте и откроется только после нажатия на кнопку ниже.</p><a class="button button-primary creator-profile-link" href="https://ariem-hub.github.io/Profile-ARI-Em/" target="_blank" rel="noopener noreferrer">Открыть профиль ARI Em <b>↗</b></a><small class="safe-note">Никакого автоматического перехода — только по клику.</small></div></div></div>
+      </section>
+
+      <section class="tab-panel" data-panel="contact" aria-label="Контакты" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>11 / CONTACT</span><span>JOIN THE PACK</span></div><div class="split-heading"><div><p class="eyebrow">СТАНЬ ЧАСТЬЮ СТАИ</p><h2>ТЫ УЖЕ<br><em>ДОСТАТОЧНО БЛИЗКО.</em></h2></div><p>Зайди, осмотрись и реши сам. Никакого давления — только люди, атмосфера и возможность найти своих.</p></div>
+          <div class="contact-grid"><a class="contact-card discord" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noreferrer"><small>MAIN COMMUNITY</small><strong>Discord</strong><span>Войти в стаю ↗</span></a><a class="contact-card telegram" href="https://t.me/+TykqvD4YOsM4ZWZi" target="_blank" rel="noreferrer"><small>NEWS & CONTACT</small><strong>Telegram</strong><span>Новости ↗</span></a><div class="contact-card counter"><small>GLOBAL PAGE VIEWS</small><strong id="visit-counter-value">…</strong><span id="visit-counter" data-status="loading">Посещения</span></div></div>
+          <div class="contact-benefits"><span>01 / Новые друзья</span><span>02 / Атмосфера</span><span>03 / Впечатления</span></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-panel="archive" aria-label="Архив" hidden>
+        <div class="panel-scroll"><div class="panel-topline"><span>12 / ARCHIVE VAULT</span><span>VERSIONS / MEMORY</span></div>
+          <div class="split-heading compact"><div><p class="eyebrow">DARKCLAW / MEMORY CORE</p><h2>ARCHIVE<br><em>VAULT.</em></h2></div><p>Здесь собрана история развития сайта и закрытые ячейки под будущие ивенты, арты и важные моменты стаи.</p></div>
+          <div class="vault-grid">
+            <article class="vault-release current tilt-card"><small>BUILD / 006</small><span>◆</span><h3>COMMAND SYSTEM v6</h3><p>Network Map, Terminal, Ctrl+K, Live Activity, Archive Vault и новая система достижений.</p><b>CURRENT</b></article>
+            <article class="vault-release tilt-card"><small>BUILD / 005</small><span>◇</span><h3>COMMAND CENTER v5</h3><p>Системные статусы, ранги, Hall of Fame и новый интерфейс главной.</p><b>ARCHIVED</b></article>
+            <article class="vault-release tilt-card"><small>BUILD / 004</small><span>◈</span><h3>PROTECTION v4</h3><p>Защита изображений от обычного копирования, drag и сохранения.</p><b>ARCHIVED</b></article>
+          </div>
+          <div class="section-divider"><span>SEALED FILES</span><i></i><b>FUTURE MEMORY</b></div>
+          <div class="sealed-files">
+            <button type="button" data-sealed-file="EVENT-001"><span>01</span><div><small>EVENT-001</small><strong>FIRST MAJOR EVENT</strong></div><b>SEALED</b></button>
+            <button type="button" data-sealed-file="ART-001"><span>02</span><div><small>ART-001</small><strong>PACK VISUAL ARCHIVE</strong></div><b>SEALED</b></button>
+            <button type="button" data-sealed-file="LORE-001"><span>03</span><div><small>LORE-001</small><strong>SHADOW RECORD</strong></div><b>SEALED</b></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer"><span>DARKCLAW — НЕ ПРОСТО СЕРВЕР. <b>ЭТО СЕМЬЯ.</b></span><div class="footer-rail"><i></i><span>v6.0</span><span>SUPPORT: DEV</span><span id="current-section-label">01 / ГЛАВНАЯ</span></div></footer>
+  </div>
+
+  <div class="toast shadow-toast" id="shadow-toast" role="status" aria-live="polite"><span>◆</span><div><strong>SHADOW NODE</strong><small>ACCESS GRANTED // DC-01</small></div></div>
+
+  <div class="toast" id="support-toast" role="status" aria-live="polite"><span>✦</span><div><strong>В разработке</strong><small>Техподдержка временно недоступна</small></div></div>
+
+  <div class="toast protection-toast" id="protection-toast" role="status" aria-live="polite"><span>◆</span><div><strong>Изображение защищено</strong><small>Скачивание и копирование отключено</small></div></div>
+
+  <div class="shadow-node" id="shadow-node" hidden aria-hidden="true"><div class="shadow-node-grid"></div><div class="shadow-node-scan"></div><div class="shadow-node-core"><small>UNLISTED / DC-01 / RESTRICTED</small><h2>SHADOW<br><em>NODE</em></h2><p>Скрытый канал DARKCLAW обнаружен. Узел хранит закрытые записи и системные следы. Доступ получен вручную — никаких автоматических переходов.</p><div class="shadow-log"><span><i>01</i> AUTH TOKEN ACCEPTED</span><span><i>02</i> PACK SIGNATURE VERIFIED</span><span><i>03</i> VAULT LINK ESTABLISHED</span></div><div class="shadow-code"><span>ACCESS</span><strong>GRANTED</strong><i>◆</i></div><div class="shadow-actions"><button type="button" data-shadow-archive>ОТКРЫТЬ VAULT →</button><button id="shadow-close" type="button">ЗАКРЫТЬ УЗЕЛ ×</button></div></div></div>
+  <div class="dc-cursor" id="dc-cursor" aria-hidden="true"><i></i></div><div class="dc-cursor-dot" id="dc-cursor-dot" aria-hidden="true"></div>
+
+  <div class="command-palette" id="command-palette" hidden aria-hidden="true">
+    <button class="palette-backdrop" type="button" data-close-palette aria-label="Закрыть"></button>
+    <div class="palette-panel" role="dialog" aria-modal="true" aria-label="Быстрый поиск DARKCLAW">
+      <div class="palette-search"><span>⌘</span><input id="palette-input" type="search" placeholder="Куда перейти? Например: ивенты, RPC, создатель..." autocomplete="off"><kbd>ESC</kbd></div>
+      <div class="palette-results" id="palette-results"></div>
+      <div class="palette-help"><span>↑↓ выбор</span><span>Enter открыть</span><span>Ctrl+K поиск</span><span>Ctrl+~ терминал</span></div>
+    </div>
+  </div>
+
+  <div class="dc-terminal" id="dc-terminal" hidden aria-hidden="true">
+    <button class="terminal-backdrop" type="button" data-close-terminal aria-label="Закрыть"></button>
+    <div class="terminal-window" role="dialog" aria-modal="true" aria-label="Терминал DARKCLAW">
+      <div class="terminal-head"><span><i></i> DARKCLAW TERMINAL / DC-SHELL</span><button type="button" data-close-terminal>×</button></div>
+      <div class="terminal-output" id="terminal-output"><p><b>[DC-SHELL]</b> v6.0 ready.</p><p>Введите <strong>help</strong>, чтобы увидеть команды.</p></div>
+      <form class="terminal-input-row" id="terminal-form"><span>ARI@DARKCLAW:~$</span><input id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Команда"></form>
+    </div>
+  </div>
+
+  <div class="vault-toast" id="vault-toast" role="status" aria-live="polite"><span>◆</span><div><strong>ФАЙЛ ЗАПЕЧАТАН</strong><small>Содержимое появится после официального события</small></div></div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея" hidden>
+    <button class="lightbox-backdrop" type="button" aria-label="Закрыть"></button><div class="lightbox-panel"><button class="lightbox-close" type="button" aria-label="Закрыть">×</button><div class="lightbox-image"><img id="lightbox-image" src="./avatar-lab.svg" alt=""></div><div class="lightbox-copy"><p class="eyebrow" id="lightbox-type"></p><h3 id="lightbox-title"></h3><p id="lightbox-description"></p><div class="lightbox-nav"><button id="lightbox-prev" type="button">← Назад</button><span id="lightbox-count"></span><button id="lightbox-next" type="button">Дальше →</button></div></div></div>
+  </div>
+</body>
+</html>
