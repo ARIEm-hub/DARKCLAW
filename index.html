@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08070d">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="DARKCLAW — LIQUID VOID edition.">
+  <meta property="og:title" content="DARKCLAW // LIQUID VOID">
+  <meta property="og:description" content="Твоя тень. Твоя стая. Твой дом.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="darkclaw-mark.webp">
+  <link rel="icon" href="darkclaw-mark.webp">
+  <link rel="stylesheet" href="darkclaw-liquid-v10.css?v=10.5.0">
+  <script defer src="darkclaw-liquid-v10.js?v=10.5.0"></script>
+  <title>DARKCLAW // LIQUID VOID</title>
+</head>
+<body class="is-booting" data-view="nexus">
+  <div class="boot boot-origin" id="boot" aria-live="polite" aria-label="Загрузка DARKCLAW — Origin Gate">
+    <div class="boot-site-ghost"></div>
+    <div class="boot-matte"></div>
+    <div class="boot-aura"></div>
+    <div class="boot-vignette"></div>
+
+    <div class="boot-eyes" aria-hidden="true">
+      <span class="eye eye-left"></span>
+      <span class="eye eye-right"></span>
+    </div>
+
+    <div class="boot-comet-scene" aria-hidden="true">
+      <svg class="comet-svg" viewBox="0 0 1000 600" preserveAspectRatio="none">
+        <path id="comet-path" d="M 155 360 C 285 165, 405 505, 565 292 S 792 168, 864 294"></path>
+        <path class="comet-trail trail-base" d="M 155 360 C 285 165, 405 505, 565 292 S 792 168, 864 294"></path>
+        <path class="comet-trail trail-glow" d="M 155 360 C 285 165, 405 505, 565 292 S 792 168, 864 294"></path>
+      </svg>
+      <span class="comet-dot" id="comet-dot"></span>
+    </div>
+
+    <div class="boot-rings" aria-hidden="true">
+      <i></i><i></i><i></i><i></i>
+    </div>
+
+    <div class="boot-petals" aria-hidden="true">
+      <span class="petal p1"></span>
+      <span class="petal p2"></span>
+      <span class="petal p3"></span>
+      <span class="petal p4"></span>
+      <span class="petal p5"></span>
+      <span class="petal p6"></span>
+    </div>
+
+    <div class="boot-copy">
+      <p class="boot-phrase phrase-one">У каждой стаи есть начало</p>
+      <h1 class="boot-name">DARKCLAW</h1>
+      <p class="boot-phrase phrase-two">И это — наше.</p>
+    </div>
+
+    <div class="boot-final-sweep"></div>
+    <div class="boot-footer"><span>ORIGIN // LIQUID GATE</span><b id="boot-step">01 / 07</b><span id="boot-status">ПОГРУЖЕНИЕ ВО ТЬМУ</span></div>
+  </div>
+
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <div class="app" id="app">
+    <div class="backdrop-blobs"><i></i><i></i><i></i><i></i></div>
+    <aside class="side-shell" id="side-shell">
+      <button class="brand-node magnetic" type="button" data-open-view="nexus" aria-label="DARKCLAW">
+        <img src="darkclaw-mark.webp" alt="" draggable="false">
+        <div><b>DARKCLAW</b><small>LIQUID VOID // УЗЕЛ 10</small></div>
+      </button>
+      <nav class="side-nav" aria-label="Навигация">
+        <button class="is-active" type="button" data-view-btn="nexus"><span>01</span><b>ГЛАВНАЯ</b></button>
+        <button type="button" data-view-btn="origin"><span>02</span><b>О СТАЕ</b></button>
+        <button type="button" data-view-btn="chamber"><span>03</span><b>СКОРО</b></button>
+        <button type="button" data-view-btn="forge"><span>04</span><b>RPC</b></button>
+        <button type="button" data-view-btn="film"><span>05</span><b>ГАЛЕРЕЯ</b></button>
+        <button type="button" data-view-btn="signal"><span>06</span><b>НОВОСТИ</b></button>
+        <button type="button" data-view-btn="team"><span>07</span><b>КОМАНДА</b></button>
+        <button type="button" data-view-btn="core"><span>08</span><b>ИВЕНТЫ</b></button>
+        <button type="button" data-view-btn="creator"><span>09</span><b>СОЗДАТЕЛЬ</b></button>
+        <button type="button" data-view-btn="portals"><span>10</span><b>ССЫЛКИ</b></button>
+        <button type="button" data-view-btn="vault"><span>11</span><b>АРХИВ</b></button>
+      </nav>
+      <div class="side-utils">
+        <button type="button" data-open-palette>⌘K</button>
+        <button type="button" data-open-terminal>&gt;_</button>
+      </div>
+    </aside>
+
+    <header class="top-shell glass-panel">
+      <div class="top-left">
+        <span class="live-ping"></span>
+        <b>DARKCLAW</b>
+        <small id="view-label">NEXUS // 01</small>
+      </div>
+      <div class="top-center">
+        <button class="pill magnetic" type="button" data-open-view="team">КОМАНДА</button>
+        <button class="pill magnetic" type="button" data-open-view="forge">RPC</button>
+        <button class="pill magnetic" type="button" data-open-view="core">ИВЕНТЫ</button>
+      </div>
+      <div class="top-right">
+        <span id="live-clock">--:--:--</span>
+        <span id="session-id">DC-------</span>
+        <button class="mobile-menu-btn" type="button" data-toggle-menu aria-label="Меню"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <button class="menu-scrim" type="button" data-close-menu hidden aria-label="Закрыть меню"></button>
+
+    <main class="stage" id="stage">
+      <section class="view is-active" data-view-panel="nexus">
+        <div class="hero-grid">
+          <article class="hero-copy glass-panel liquid reveal">
+            <small class="section-kicker">ГЛАВНАЯ // ВХОДНОЙ УЗЕЛ</small>
+            <h1>DARK<span>CLAW</span></h1>
+            <p class="hero-lead">DARKCLAW — место, где собираются свои: для общения, творчества, VRChat и атмосферы, которую хочется чувствовать снова и снова. Здесь каждый раздел — часть одной живой системы, а не просто набор ссылок.</p>
+            <div class="hero-actions">
+              <a class="action-btn discord magnetic" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noopener noreferrer"><span>ВСТУПИТЬ В DISCORD</span><b>↗</b></a>
+              <a class="action-btn youtube magnetic" href="https://youtube.com/@ari-t_t-ari?si=6IhQ3LeFlLpI8_-9" target="_blank" rel="noopener noreferrer"><span>▶ YOUTUBE</span><b>↗</b></a>
+              <div class="support-shell">
+                <button class="action-btn support disabled" type="button" data-disabled-support><span>ТЕХПОДДЕРЖКА</span><b>×</b></button>
+                <div class="support-tip"><strong>В РАЗРАБОТКЕ</strong><small>Техподдержка временно недоступна</small></div>
+              </div>
+            </div>
+            <div class="micro-links">
+              <button type="button" data-open-view="team">КОМАНДА / ОСНОВНОЙ СОСТАВ</button>
+              <button type="button" data-open-view="forge">RPC / ТВОРЧЕСКОЕ НАПРАВЛЕНИЕ</button>
+              <button type="button" data-open-view="core">ИВЕНТЫ / СКОРО</button>
+            </div>
+          </article>
+
+          <article class="hero-network glass-panel liquid reveal delay-1">
+            <div class="network-sigil">
+              <img src="darkclaw-mark.webp" alt="DARKCLAW" draggable="false">
+              <i class="orbit a"></i><i class="orbit b"></i><i class="orbit c"></i>
+            </div>
+            <button class="network-node n1 magnetic" type="button" data-open-view="team"><small>07</small><b>КОМАНДА</b></button>
+            <button class="network-node n2 magnetic" type="button" data-open-view="forge"><small>04</small><b>RPC</b></button>
+            <button class="network-node n3 magnetic" type="button" data-open-view="film"><small>05</small><b>ГАЛЕРЕЯ</b></button>
+            <button class="network-node n4 magnetic" type="button" data-open-view="core"><small>08</small><b>EVENT</b></button>
+            <div class="network-readout"><span>СТАТУС СЕТИ</span><strong>LIQUID VOID / АКТИВЕН</strong></div>
+          </article>
+
+          <aside class="status-stack">
+            <div class="status-card glass-panel reveal delay-1"><span>CORE</span><b>АКТИВЕН</b><small>ГЛАВНЫЙ УЗЕЛ АКТИВЕН</small></div>
+            <div class="status-card glass-panel reveal delay-2"><span>RPC</span><b>RPC</b><small>ТВОРЧЕСКИЙ УЗЕЛ ГОТОВ</small></div>
+            <div class="status-card glass-panel reveal delay-3"><span>MEDIA</span><b>ГАЛЕРЕЯ</b><small>VAULT INDEXED</small></div>
+            <div class="status-card glass-panel reveal delay-4"><span>EVENTS</span><b>TBA</b><small>ТАЙМЕР ОЖИДАЕТ ДАТУ</small></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="origin" hidden>
+        <div class="origin-grid">
+          <article class="glass-panel giant-quote liquid"><small>О СТАЕ // КОДЕКС</small><h2>ТВОЯ ТЕНЬ.<br>ТВОЯ СТАЯ.<br>ТВОЙ ДОМ.</h2><p>DARKCLAW — пространство для общения, VRChat, творчества, игр и атмосферы без лишнего пафоса.</p></article>
+          <article class="glass-panel liquid manifesto"><small>01 / PEOPLE</small><strong>Люди важнее цифр.</strong><p>Смысл не в количестве, а в ощущении своего круга.</p></article>
+          <article class="glass-panel liquid manifesto"><small>02 / CRAFT</small><strong>Свои аватары, миры и контент.</strong><p>Здесь можно не только тусоваться, но и создавать.</p></article>
+          <article class="glass-panel liquid manifesto"><small>03 / ATMOSPHERE</small><strong>Визуальный язык и настроение.</strong><p>DARKCLAW строится как отдельная эстетическая зона.</p></article>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="chamber" hidden>
+        <div class="sealed-card glass-panel liquid"><small>РАЗДЕЛ // ЗАКРЫТ</small><h2>СКОРО...</h2><p>Раздел формируется. Когда будет готов — откроется как отдельный узел внутри системы.</p><div class="seal-ring"><i></i><i></i><b>DC</b></div></div>
+      </section>
+
+      <section class="view" data-view-panel="forge" hidden>
+        <div class="forge-grid">
+          <article class="glass-panel liquid forge-main">
+            <small>FORGE // REDPAD ТВОРЧЕСТВО</small>
+            <h2>RPC</h2>
+            <p>Отдельная ветка проекта, отвечающая за VRChat-контент, кастомы, окружение и креативные сборки.</p>
+            <a class="action-btn primary magnetic" href="https://rpc-order-website.onrender.com/" target="_blank" rel="noopener noreferrer"><span>ОТКРЫТЬ RPC</span><b>↗</b></a>
+          </article>
+          <article class="glass-panel liquid forge-mark"><img src="rpc-mark.webp" alt="RPC" draggable="false"><small>FORGE GLASS / АКТИВЕН</small></article>
+          <article class="glass-panel liquid forge-card"><small>WORLD СБОРКА</small><strong>VRCHAT WORLDS</strong><p>Локации, визуал, интерактив, атмосфера.</p></article>
+          <article class="glass-panel liquid forge-card"><small>AVATAR WORK</small><strong>CUSTOM AVATARS</strong><p>Кастомы, стилистика и аксессуары.</p></article>
+          <article class="glass-panel liquid forge-card"><small>ART PIPELINE</small><strong>3D CONTENT</strong><p>Пропсы, объекты и визуальные пакеты.</p></article>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="film" hidden>
+        <div class="film-head glass-panel"><small>ГАЛЕРЕЯ // МЕДИА-АРХИВ</small><h2>ГАЛЕРЕЯ</h2><div class="gallery-filter"><button class="is-active" data-media-filter="all">ВСЁ</button><button data-media-filter="vrchat">VRCHAT</button><button data-media-filter="events">ИВЕНТЫ</button><button data-media-filter="rpc">RPC</button></div></div>
+        <div class="film-strip">
+          <button class="film-frame large glass-panel" type="button" data-gallery-index="0" data-media-kind="vrchat"><img src="avatar-lab.svg" alt="Avatar Lab" draggable="false"><div><small>01</small><strong>AVATAR LAB</strong><span>ОТКРЫТЬ ↗</span></div></button>
+          <button class="film-frame tall glass-panel" type="button" data-gallery-index="1" data-media-kind="vrchat"><img src="world-night.svg" alt="Night World" draggable="false"><div><small>02</small><strong>NIGHT WORLD</strong><span>ОТКРЫТЬ ↗</span></div></button>
+          <button class="film-frame glass-panel" type="button" data-gallery-index="2" data-media-kind="events"><img src="event-stage.svg" alt="Community Event" draggable="false"><div><small>03</small><strong>СООБЩЕСТВО EVENT</strong><span>ОТКРЫТЬ ↗</span></div></button>
+          <button class="film-frame glass-panel" type="button" data-gallery-index="3" data-media-kind="rpc"><img src="studio-grid.svg" alt="Creator Studio" draggable="false"><div><small>04</small><strong>ТВОРЧЕСТВО STUDIO</strong><span>ОТКРЫТЬ ↗</span></div></button>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="signal" hidden>
+        <div class="signal-wrap">
+          <article class="glass-panel liquid signal-main"><small>НОВОСТИ // КРУПНОЕ ОБНОВЛЕНИЕ</small><h2>LIQUID VOID</h2><p>Новый каркас, стеклянный интерфейс, жидкие переходы, усиленные анимации, возвращённый курсор и свежая система модулей.</p><div><span>ПЕРЕСБОРКА</span><span>ЖИДКОЕ СТЕКЛО</span><span>КИБЕР-ГОТИКА</span></div></article>
+          <article class="glass-panel liquid signal-line"><b>CORE</b><div><strong>NEXUS АКТИВЕН</strong><p>Основная система загружена.</p></div><span>100%</span></article>
+          <article class="glass-panel liquid signal-line"><b>RPC</b><div><strong>FORGE READY</strong><p>RPC ссылка и витрина активны.</p></div><span>LIVE</span></article>
+          <article class="glass-panel liquid signal-line"><b>SUP</b><div><strong>ПОДДЕРЖКА LOCKED</strong><p>Техподдержка в разработке.</p></div><span>РАЗРАБ.</span></article>
+          <article class="glass-panel liquid signal-line"><b>EVT</b><div><strong>EVENT CORE IDLE</strong><p>Ожидается новая дата.</p></div><span>TBA</span></article>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="team" hidden>
+        <div class="team-shell">
+          <header class="team-header glass-panel"><small>КОМАНДА // ПОЛНЫЕ ФОТО</small><h2>ОСНОВНОЙ СОСТАВ</h2><p>Фотографии участников показаны полностью, без жёсткого обрезания. Карточки команды пересобраны под новый liquid glass стиль.</p></header>
+          <div class="team-grid">
+            <article class="member-card glass-panel liquid feature">
+              <div class="portrait-shell full-visible"><img src="creator-ari.webp" alt="ARI Em" draggable="false"></div>
+              <div class="member-meta"><small>DC-001 / ОСНОВАТЕЛЬ</small><h3>ARI EM</h3><strong>Создатель DARKCLAW</strong><p>Визуальное направление, структура сообщества и развитие DARKCLAW.</p><button type="button" class="mini-link magnetic" data-open-view="creator">ОТКРЫТЬ ПРОФИЛЬ →</button></div>
+            </article>
+            <article class="member-card glass-panel liquid">
+              <div class="portrait-shell full-visible"><img src="jr-vinter.webp" alt="JR VINTER" draggable="false"></div>
+              <div class="member-meta"><small>DC-002 / RPC</small><h3>JR VINTER</h3><strong>Создатель RPC</strong><p>Творческое направление RedPad Creator и развитие 3D-проектов.</p><button type="button" class="mini-link magnetic" data-open-view="forge">ОТКРЫТЬ RPC →</button></div>
+            </article>
+            <article class="member-card glass-panel liquid">
+              <div class="portrait-shell full-visible"><img src="rgw.webp" alt="RGW" draggable="false"></div>
+              <div class="member-meta"><small>DC-003 / MEDIA</small><h3>RGW</h3><strong>Главный актер</strong><p>Медийное и сценическое направление DARKCLAW.</p><button type="button" class="mini-link magnetic" data-open-view="film">ОТКРЫТЬ МЕДИА →</button></div>
+            </article>
+            <article class="member-card glass-panel liquid">
+              <div class="portrait-shell full-visible"><img src="senko.webp" alt="SENKO" draggable="false"></div>
+              <div class="member-meta"><small>DC-004 / STAFF</small><h3>SENKO</h3><strong>Главный STAFF</strong><p>Главный модератор сообщества. Следит за порядком, помогает участникам и держит внутреннюю структуру DARKCLAW в стабильности.</p><button type="button" class="mini-link magnetic" data-open-view="signal">ОТКРЫТЬ НОВОСТИ →</button></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="core" hidden>
+        <div class="core-grid">
+          <article class="glass-panel liquid radar-card">
+            <small>ИВЕНТЫ // РАДАР</small>
+            <div class="radar"><i></i><i></i><i></i><span></span></div>
+            <div class="event-state"><i></i> ПЛАНИРОВАНИЕ</div>
+          </article>
+          <article class="glass-panel liquid countdown-card">
+            <small>СЛЕДУЮЩИЙ ИВЕНТ</small>
+            <h2>TBA</h2>
+            <p>Когда у события появится реальная дата, таймер ниже начнёт отсчёт автоматически.</p>
+            <div class="countdown" id="countdown" data-event-date=""><div><strong id="cd-days">TBA</strong><small>ДНИ</small></div><div><strong id="cd-hours">--</strong><small>ЧАСЫ</small></div><div><strong id="cd-mins">--</strong><small>МИН</small></div></div>
+          </article>
+          <article class="glass-panel liquid event-card"><small>01 / NIGHT</small><strong>VRCHAT NIGHT</strong><span>SOON</span></article>
+          <article class="glass-panel liquid event-card"><small>02 / PLAY</small><strong>GAME NIGHT</strong><span>SOON</span></article>
+          <article class="glass-panel liquid event-card"><small>03 / SHOW</small><strong>SHOWCASE</strong><span>SOON</span></article>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="creator" hidden>
+        <div class="creator-grid">
+          <article class="glass-panel liquid creator-hero">
+            <div class="creator-photo full-visible"><img src="creator-ari.webp" alt="ARI Em" draggable="false"></div>
+            <div class="creator-copy"><small>СОЗДАТЕЛЬ // DC-001</small><h2>ARI EM</h2><p>Создатель DARKCLAW. Внешний профиль открывается только после ручного нажатия.</p><dl><div><dt>РОЛЬ</dt><dd>ОСНОВАТЕЛЬ</dd></div><div><dt>УЗЕЛ</dt><dd>DC-001</dd></div><div><dt>СТАТУС</dt><dd>АКТИВЕН</dd></div></dl><a class="action-btn primary magnetic" href="https://ariem-hub.github.io/Profile-ARI-Em/" target="_blank" rel="noopener noreferrer"><span>ОТКРЫТЬ ПРОФИЛЬ ARI EM</span><b>↗</b></a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="portals" hidden>
+        <div class="portals-grid">
+          <a class="glass-panel liquid portal-card magnetic" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noopener noreferrer"><small>01 / СООБЩЕСТВО</small><strong>ВСТУПИТЬ В DISCORD</strong><b>↗</b></a>
+          <a class="glass-panel liquid portal-card yt magnetic" href="https://youtube.com/@ari-t_t-ari?si=6IhQ3LeFlLpI8_-9" target="_blank" rel="noopener noreferrer"><small>02 / ВИДЕО</small><strong>▶ YOUTUBE</strong><b>↗</b></a>
+          <a class="glass-panel liquid portal-card magnetic" href="https://rpc-order-website.onrender.com/" target="_blank" rel="noopener noreferrer"><small>03 / ТВОРЧЕСТВО</small><strong>ОТКРЫТЬ RPC</strong><b>↗</b></a>
+          <div class="glass-panel liquid portal-card disabled"><small>04 / ПОДДЕРЖКА</small><strong>ТЕХПОДДЕРЖКА</strong><b>РАЗРАБ.</b></div>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="vault" hidden>
+        <div class="vault-grid">
+          <article class="glass-panel liquid relic"><small>RELIC / 001</small><strong>ОСНОВА</strong><p>DARKCLAW identity established.</p><span>ARCHIVED</span></article>
+          <article class="glass-panel liquid relic"><small>RELIC / 002</small><strong>СВЯЗЬ С RPC</strong><p>RedPad Creator connected.</p><span>ACTIVE</span></article>
+          <article class="glass-panel liquid relic"><small>RELIC / 003</small><strong>LIQUID VOID</strong><p>Full glass-interface rebuild.</p><span>CURRENT</span></article>
+          <article class="glass-panel liquid relic counter"><small>ПОСЕЩЕНИЯ СТРАНИЦЫ</small><strong id="visit-counter-value">—</strong><p id="visit-counter">ПОДКЛЮЧЕНИЕ СЧЁТЧИКА</p></article>
+          <button class="shadow-trigger glass-panel magnetic" type="button" data-open-shadow>◈ OPEN SHADOW УЗЕЛ</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottom-hud glass-panel">
+      <div><span>СБОРКА</span><b>10.0 / LIQUID VOID</b></div>
+      <div><span>РАЗДЕЛ</span><b id="hud-view">ГЛАВНАЯ</b></div>
+      <div><span>СЕТЬ</span><b>АКТИВЕН</b></div>
+      <div><span>ПОДДЕРЖКА</span><b>РАЗРАБ.ELOPMENT</b></div>
+    </footer>
+
+    <div class="ari-consent" id="ari-consent" hidden aria-hidden="true">
+      <div class="ari-consent-card glass-panel" role="dialog" aria-modal="false" aria-labelledby="ari-consent-title">
+        <div class="ari-consent-avatar"><img src="ari-hello.webp" alt="ARI" draggable="false"></div>
+        <div class="ari-consent-copy">
+          <small>ГОЛОСОВОЙ ПОМОЩНИК // ARI</small>
+          <h2 id="ari-consent-title">Хотите запустить голосового ассистента?</h2>
+          <p>ARI будет сопровождать вас по разделам DARKCLAW и говорить отдельную реплику для каждой вкладки.</p>
+          <div class="ari-consent-actions">
+            <button class="ari-consent-yes magnetic" type="button" data-ari-consent="yes"><span>ЗАПУСТИТЬ ARI</span><b>→</b></button>
+            <button class="ari-consent-no" type="button" data-ari-consent="no">НЕ СЕЙЧАС</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="ari-assistant" id="ari-assistant" hidden aria-live="polite" aria-label="Голосовой помощник ARI">
+      <button class="ari-portrait" id="ari-portrait-btn" type="button" aria-label="Показать реплику ARI">
+        <span class="ari-glow"></span>
+        <img id="ari-sticker" src="ari-hello.webp" alt="ARI" draggable="false">
+        <span class="ari-name">ARI</span>
+      </button>
+      <div class="ari-bubble" id="ari-bubble">
+        <div class="ari-bubble-head"><strong>ARI</strong><span>помощник DARKCLAW</span></div>
+        <p id="ari-text">Приветик~ Я ARI. Добро пожаловать в DARKCLAW. Ну что, куда пойдём сначала?</p>
+      </div>
+      <audio id="ari-voice" preload="auto"></audio>
+    </aside>
+
+  </div>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+  <div class="red-alert" id="red-alert"><span>СИГНАЛ ТРЕВОГИ</span><b>КОНТРОЛЬ DARKCLAW</b></div>
+
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true"><button class="light-close" type="button" data-close-lightbox>×</button><button class="light-nav prev" type="button" data-light-prev>‹</button><figure><img id="lightbox-img" src="" alt="" draggable="false"><figcaption id="lightbox-caption"></figcaption></figure><button class="light-nav next" type="button" data-light-next>›</button></div>
+
+  <div class="overlay" id="palette" hidden aria-hidden="true"><div class="palette glass-panel"><div class="palette-head"><span>СПИСОК КОМАНД</span><kbd>ESC</kbd></div><input id="palette-input" type="text" autocomplete="off" placeholder="Поиск раздела или команды..."><div id="palette-results"></div></div></div>
+
+  <div class="overlay" id="terminal" hidden aria-hidden="true"><div class="terminal glass-panel"><header><div><i></i><span>DC-SHELL / LIQUID</span></div><button type="button" data-close-terminal>×</button></header><div class="terminal-output" id="terminal-output"><p class="ok">Терминал DARKCLAW готов. Введите <strong>help</strong>.</p></div><form id="terminal-form"><span>ARI@DARKCLAW:~$</span><input id="terminal-input" autocomplete="off" spellcheck="false"></form></div></div>
+
+  <div class="overlay" id="shadow" hidden aria-hidden="true"><div class="shadow-node glass-panel"><button type="button" data-close-shadow>×</button><span>◈ SHADOW УЗЕЛ</span><h2>ДОСТУП<br>РАЗРЕШЁН.</h2><p>Скрытый сектор DARKCLAW. Ты нашёл узел вне обычной навигации.</p><div><b>УЗЕЛ</b><strong>SHADOW-10</strong></div><button type="button" data-shadow-relics>ОТКРЫТЬ АРХИВ →</button></div></div>
+</body>
+</html>
