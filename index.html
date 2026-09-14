@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050507">
+  <meta name="description" content="DARKCLAW CINEMA — VRChat, творчество, RPC, медиа и своя стая.">
+  <meta property="og:title" content="DARKCLAW // CINEMA">
+  <meta property="og:description" content="Твоя тень. Твоя стая. Твой дом.">
+  <meta property="og:image" content="darkclaw-mark.webp">
+  <link rel="icon" href="darkclaw-mark.webp">
+  <link rel="stylesheet" href="darkclaw-cinema.css?v=15.0.0">
+  <script defer src="darkclaw-cinema.js?v=15.0.0"></script>
+  <title>DARKCLAW // CINEMA</title>
+</head>
+<body class="is-booting" data-view="home">
+  <div class="boot" id="boot" aria-label="DARKCLAW CINEMA loading">
+    <div class="boot-beam"></div>
+    <div class="boot-grain"></div>
+    <div class="boot-bars"><i></i><i></i></div>
+    <div class="boot-frame" aria-hidden="true">
+      <span class="perf top"></span><span class="perf bottom"></span>
+    </div>
+    <div class="boot-count" id="boot-count">03</div>
+    <div class="boot-logo-wrap">
+      <div class="boot-halo"></div>
+      <img src="darkclaw-mark.webp" alt="DARKCLAW" draggable="false">
+      <small>A DARKCLAW PRODUCTION</small>
+      <h1>DARK<span>CLAW</span></h1>
+      <p>ТВОЯ ТЕНЬ. ТВОЯ СТАЯ. ТВОЙ ДОМ.</p>
+    </div>
+    <div class="boot-meta"><span id="boot-status">PROJECTOR // START</span><b id="boot-percent">00%</b></div>
+  </div>
+
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="site" id="site">
+    <header class="cinema-header">
+      <button class="cinema-brand" type="button" data-open-view="home" aria-label="DARKCLAW home">
+        <img src="darkclaw-mark.webp" alt="" draggable="false">
+        <span><b>DARKCLAW</b><small>CINEMA // 15</small></span>
+      </button>
+      <nav class="cinema-nav" aria-label="Основная навигация">
+        <button class="active" type="button" data-view-btn="home">ГЛАВНАЯ</button>
+        <button type="button" data-view-btn="story">ИСТОРИЯ</button>
+        <button type="button" data-view-btn="rpc">RPC</button>
+        <button type="button" data-view-btn="media">MEDIA</button>
+        <button type="button" data-view-btn="cast">CAST</button>
+        <button type="button" data-view-btn="events">EVENTS</button>
+        <button type="button" data-view-btn="creator">CREATOR</button>
+      </nav>
+      <div class="header-actions">
+        <button class="header-more" type="button" data-open-menu><span>MENU</span><i></i></button>
+      </div>
+    </header>
+
+    <main class="cinema-stage" id="cinema-stage">
+      <section class="scene scene-home is-active" data-view-panel="home">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="gothic-bg.webp" alt="" draggable="false">
+          <div class="hero-bg-layer"></div>
+        </div>
+        <div class="hero-letterbox top"></div><div class="hero-letterbox bottom"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span>DC / 001</span><i></i><span>NOW SCREENING</span></div>
+          <h1><span>DARK</span><b>CLAW</b></h1>
+          <p>VRChat. Творчество. Ночные истории. Люди, которые становятся своей стаей.</p>
+          <div class="hero-actions">
+            <a class="cinema-btn primary" href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noopener noreferrer"><span>ENTER THE PACK</span><b>↗</b></a>
+            <button class="cinema-btn ghost" type="button" data-open-view="media"><span>WATCH THE STORY</span><b>▶</b></button>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div><small>STATUS</small><strong>ONLINE</strong></div>
+          <div><small>FEATURED</small><strong>DARKCLAW CINEMA</strong></div>
+          <div><small>NEXT</small><button type="button" data-open-view="story">THE STORY →</button></div>
+        </div>
+      </section>
+
+      <section class="scene scene-story" data-view-panel="story" hidden>
+        <div class="scene-backdrop story-bg"></div>
+        <div class="scene-inner story-layout">
+          <div class="scene-title-block reveal">
+            <small>CHAPTER 01 / THE STORY</small>
+            <h2>НЕ СЕРВЕР.<br><em>МЕСТО, КУДА<br>ВОЗВРАЩАЮТСЯ.</em></h2>
+          </div>
+          <div class="story-copy reveal delay-1">
+            <p class="lead">DARKCLAW соединяет VRChat, творчество, медиа и людей в одном пространстве со своим характером.</p>
+            <div class="story-chapters">
+              <article><span>01</span><div><b>PEOPLE</b><p>Люди важнее счётчика участников. Стая появляется только там, где начинают узнавать друг друга.</p></div></article>
+              <article><span>02</span><div><b>CRAFT</b><p>Аватары, миры, арты, видео и идеи — здесь можно не только смотреть, но и создавать.</p></div></article>
+              <article><span>03</span><div><b>ATMOSPHERE</b><p>Ночные разговоры, VRChat и визуальный язык DARKCLAW складываются в одну историю.</p></div></article>
+            </div>
+          </div>
+          <div class="story-mark reveal delay-2"><img src="darkclaw-mark.webp" alt="DARKCLAW" draggable="false"><span>EST. DARKCLAW</span></div>
+        </div>
+      </section>
+
+      <section class="scene scene-rpc" data-view-panel="rpc" hidden>
+        <div class="scene-backdrop rpc-bg"></div>
+        <div class="scene-inner rpc-layout">
+          <div class="rpc-poster reveal">
+            <img src="rpc-mark.webp" alt="RPC" draggable="false">
+            <small>DARKCLAW PRESENTS</small>
+            <h2>RPC</h2>
+            <p>REDPAD CREATOR</p>
+          </div>
+          <div class="rpc-copy reveal delay-1">
+            <small>CHAPTER 02 / PRODUCTION</small>
+            <h2>ТВОЯ ИДЕЯ.<br><em>НАША СБОРКА.</em></h2>
+            <p>Кастомные VRChat-аватары, миры, 3D и технические системы. Не нужно знать названия всех инструментов — достаточно показать, что ты хочешь получить.</p>
+            <div class="rpc-services">
+              <button type="button"><span>01</span><b>CUSTOM AVATARS</b><em>PC / QUEST</em></button>
+              <button type="button"><span>02</span><b>VRCHAT WORLDS</b><em>DESIGN / UDON</em></button>
+              <button type="button"><span>03</span><b>3D & SYSTEMS</b><em>BUILD / FX</em></button>
+            </div>
+            <a class="cinema-btn primary wide" href="https://rpc-order-website.onrender.com/" target="_blank" rel="noopener noreferrer"><span>ОФОРМИТЬ ЗАКАЗ RPC</span><b>↗</b></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-media" data-view-panel="media" hidden>
+        <div class="scene-inner media-layout">
+          <header class="media-head reveal">
+            <div><small>CHAPTER 03 / MEDIA</small><h2>КАДРЫ,<br><em>КОТОРЫЕ ОСТАЮТСЯ.</em></h2></div>
+            <a href="https://youtube.com/@ari-t_t-ari?si=6IhQ3LeFlLpI8_-9" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a>
+          </header>
+          <div class="film-wall reveal delay-1">
+            <button class="still hero-still" type="button" data-gallery="gothic-bg.webp" data-caption="DARKCLAW / CINEMATIC FRAME">
+              <img src="gothic-bg.webp" alt="DARKCLAW cinematic frame" draggable="false">
+              <div><small>FEATURED / 01</small><b>DARKCLAW CINEMATIC</b><span>OPEN FRAME ↗</span></div>
+            </button>
+            <button class="still" type="button" data-gallery="creator-ari.webp" data-caption="ARI EM / CREATOR">
+              <img src="creator-ari.webp" alt="ARI EM" draggable="false"><div><small>FRAME / 02</small><b>ARI EM</b></div>
+            </button>
+            <button class="still" type="button" data-gallery="jr-vinter.webp" data-caption="JR VINTER / RPC">
+              <img src="jr-vinter.webp" alt="JR VINTER" draggable="false"><div><small>FRAME / 03</small><b>RPC</b></div>
+            </button>
+            <button class="still" type="button" data-gallery="rgw.webp" data-caption="RGW / MEDIA">
+              <img src="rgw.webp" alt="RGW" draggable="false"><div><small>FRAME / 04</small><b>RGW</b></div>
+            </button>
+            <button class="still" type="button" data-gallery="senko.webp" data-caption="SENKO / STAFF">
+              <img src="senko.webp" alt="SENKO" draggable="false"><div><small>FRAME / 05</small><b>SENKO</b></div>
+            </button>
+          </div>
+          <div class="social-reel reveal delay-2">
+            <a href="https://youtube.com/@ari-t_t-ari?si=6IhQ3LeFlLpI8_-9" target="_blank" rel="noopener noreferrer"><span>▶</span><div><small>YOUTUBE</small><b>ФИЛЬМЫ / SHORTS / VRCHAT</b></div><em>↗</em></a>
+            <div class="social-disabled"><span>♪</span><div><small>TIKTOK</small><b>ССЫЛКА ЕЩЁ НЕ ПОДКЛЮЧЕНА</b></div><em>SOON</em></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-cast" data-view-panel="cast" hidden>
+        <div class="scene-inner cast-layout">
+          <header class="cast-head reveal"><small>CHAPTER 04 / THE CAST</small><h2>В ГЛАВНЫХ РОЛЯХ.</h2><p>Люди, которые стоят за DARKCLAW.</p></header>
+          <div class="cast-grid">
+            <article class="cast-card lead reveal">
+              <div class="cast-photo"><img src="creator-ari.webp" alt="ARI EM" draggable="false"></div>
+              <div class="cast-info"><small>01 / CREATOR</small><h3>ARI EM</h3><strong>Создатель DARKCLAW</strong><p>Концепция, визуальное направление и развитие проекта.</p><button type="button" data-open-view="creator">PROFILE →</button></div>
+            </article>
+            <article class="cast-card reveal delay-1">
+              <div class="cast-photo"><img src="jr-vinter.webp" alt="JR VINTER" draggable="false"></div>
+              <div class="cast-info"><small>02 / RPC</small><h3>JR VINTER</h3><strong>Создатель RPC</strong><p>Аватары, миры и техническое направление.</p><button type="button" data-open-view="rpc">RPC →</button></div>
+            </article>
+            <article class="cast-card reveal delay-2">
+              <div class="cast-photo"><img src="rgw.webp" alt="RGW" draggable="false"></div>
+              <div class="cast-info"><small>03 / MEDIA</small><h3>RGW</h3><strong>Главный актёр</strong><p>Медийное и сценическое направление.</p><button type="button" data-open-view="media">MEDIA →</button></div>
+            </article>
+            <article class="cast-card reveal delay-3">
+              <div class="cast-photo"><img src="senko.webp" alt="SENKO" draggable="false"></div>
+              <div class="cast-info"><small>04 / STAFF</small><h3>SENKO</h3><strong>Главный STAFF</strong><p>Главный модератор и внутренняя стабильность сообщества.</p><button type="button" data-open-view="news">NEWS →</button></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-events" data-view-panel="events" hidden>
+        <div class="scene-inner events-layout">
+          <header class="events-head reveal"><small>CHAPTER 05 / EVENTS</small><h2>COMING<br><em>SOON.</em></h2><p>Когда событие получит дату — афиша оживёт и запустит отсчёт.</p></header>
+          <div class="poster-row">
+            <article class="event-poster reveal delay-1"><div class="poster-art p1"><span>01</span></div><small>VRCHAT NIGHT</small><h3>AFTER DARK</h3><p>DATE // TBA</p></article>
+            <article class="event-poster reveal delay-2"><div class="poster-art p2"><span>02</span></div><small>COMMUNITY EVENT</small><h3>THE PACK</h3><p>DATE // TBA</p></article>
+            <article class="event-poster reveal delay-3"><div class="poster-art p3"><span>03</span></div><small>SHOWCASE</small><h3>FRAME ZERO</h3><p>DATE // TBA</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-creator" data-view-panel="creator" hidden>
+        <div class="scene-inner creator-layout">
+          <div class="creator-visual reveal"><img src="creator-ari.webp" alt="ARI EM" draggable="false"><div class="creator-credit"><small>DIRECTED BY</small><b>ARI EM</b></div></div>
+          <div class="creator-copy reveal delay-1">
+            <small>CHAPTER 06 / CREATOR</small>
+            <h2>ARI<br><em>EM</em></h2>
+            <p>Создатель DARKCLAW. Концепция, эстетика проекта и направление, в котором развивается стая.</p>
+            <dl><div><dt>ROLE</dt><dd>CREATOR</dd></div><div><dt>PROJECT</dt><dd>DARKCLAW</dd></div><div><dt>STATUS</dt><dd>ACTIVE</dd></div></dl>
+            <a class="cinema-btn primary wide" href="https://ariem-hub.github.io/Profile-ARI-Em/" target="_blank" rel="noopener noreferrer"><span>ОТКРЫТЬ ПРОФИЛЬ</span><b>↗</b></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-news" data-view-panel="news" hidden>
+        <div class="scene-inner news-layout">
+          <header class="news-head reveal"><small>EXTRA / NEWS WIRE</small><h2>СИГНАЛЫ<br><em>ИЗ DARKCLAW.</em></h2></header>
+          <div class="news-list reveal delay-1">
+            <article><span>01</span><div><small>CURRENT RELEASE</small><h3>DARKCLAW CINEMA</h3><p>Полный визуальный rebuild сайта: новый кино-интерфейс, сцены, загрузка и мобильная версия.</p></div><b>NOW</b></article>
+            <article><span>02</span><div><small>RPC</small><h3>ORDER SYSTEM</h3><p>Форма заказов RPC доступна для аватаров, миров и 3D-задач.</p></div><b>LIVE</b></article>
+            <article><span>03</span><div><small>EVENTS</small><h3>NEXT PREMIERE</h3><p>Следующее событие появится как отдельная афиша после подтверждения даты.</p></div><b>TBA</b></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-links" data-view-panel="links" hidden>
+        <div class="scene-inner links-layout">
+          <header class="links-head reveal"><small>EXTRA / PORTALS</small><h2>ВЫБЕРИ<br><em>СЛЕДУЮЩУЮ СЦЕНУ.</em></h2></header>
+          <div class="portal-grid reveal delay-1">
+            <a href="https://discord.gg/mGGN2RqEHw" target="_blank" rel="noopener noreferrer"><span>01</span><small>COMMUNITY</small><h3>DISCORD</h3><b>ENTER ↗</b></a>
+            <a href="https://youtube.com/@ari-t_t-ari?si=6IhQ3LeFlLpI8_-9" target="_blank" rel="noopener noreferrer"><span>02</span><small>VIDEO</small><h3>YOUTUBE</h3><b>WATCH ↗</b></a>
+            <a href="https://rpc-order-website.onrender.com/" target="_blank" rel="noopener noreferrer"><span>03</span><small>PRODUCTION</small><h3>RPC</h3><b>ORDER ↗</b></a>
+            <a href="https://ariem-hub.github.io/Profile-ARI-Em/" target="_blank" rel="noopener noreferrer"><span>04</span><small>CREATOR</small><h3>ARI EM</h3><b>OPEN ↗</b></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene-archive" data-view-panel="archive" hidden>
+        <div class="scene-inner archive-layout">
+          <header class="archive-head reveal"><small>EXTRA / END CREDITS</small><h2>BLACK<br><em>ARCHIVE.</em></h2><p>То, что уже стало частью истории DARKCLAW.</p></header>
+          <div class="credits reveal delay-1">
+            <div><span>001</span><b>ORIGIN</b><small>DARKCLAW identity established.</small></div>
+            <div><span>002</span><b>RPC CONNECTION</b><small>RedPad Creator joined the ecosystem.</small></div>
+            <div><span>003</span><b>CINEMA ERA</b><small>Full cinematic interface rebuild.</small></div>
+            <div><span>∞</span><b>NEXT FRAME</b><small>The story is still being written.</small></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="cinema-footer">
+      <button type="button" data-open-view="news">NEWS</button>
+      <span>© DARKCLAW // CINEMA</span>
+      <button type="button" data-open-view="links">LINKS</button>
+      <button type="button" data-open-view="archive">ARCHIVE</button>
+    </footer>
+
+    <nav class="mobile-dock" aria-label="Мобильная навигация">
+      <button class="active" type="button" data-mobile-view="home"><span>⌂</span><small>HOME</small></button>
+      <button type="button" data-mobile-view="media"><span>▶</span><small>MEDIA</small></button>
+      <button type="button" data-mobile-view="rpc"><span>◆</span><small>RPC</small></button>
+      <button type="button" data-mobile-view="cast"><span>◉</span><small>CAST</small></button>
+      <button type="button" data-open-menu><span>≡</span><small>MORE</small></button>
+    </nav>
+  </div>
+
+  <div class="menu-overlay" id="menu-overlay" hidden aria-hidden="true">
+    <button class="menu-close" type="button" data-close-menu aria-label="Закрыть">×</button>
+    <div class="menu-title"><small>DARKCLAW // CINEMA</small><b>SCENE SELECT</b></div>
+    <nav class="menu-list">
+      <button type="button" data-menu-view="home"><span>01</span><b>ГЛАВНАЯ</b><em>OPENING</em></button>
+      <button type="button" data-menu-view="story"><span>02</span><b>ИСТОРИЯ</b><em>THE STORY</em></button>
+      <button type="button" data-menu-view="rpc"><span>03</span><b>RPC</b><em>PRODUCTION</em></button>
+      <button type="button" data-menu-view="media"><span>04</span><b>MEDIA</b><em>THE FRAMES</em></button>
+      <button type="button" data-menu-view="cast"><span>05</span><b>КОМАНДА</b><em>THE CAST</em></button>
+      <button type="button" data-menu-view="events"><span>06</span><b>ИВЕНТЫ</b><em>PREMIERES</em></button>
+      <button type="button" data-menu-view="creator"><span>07</span><b>СОЗДАТЕЛЬ</b><em>DIRECTOR</em></button>
+      <button type="button" data-menu-view="news"><span>08</span><b>НОВОСТИ</b><em>NEWS WIRE</em></button>
+      <button type="button" data-menu-view="links"><span>09</span><b>ССЫЛКИ</b><em>PORTALS</em></button>
+      <button type="button" data-menu-view="archive"><span>10</span><b>АРХИВ</b><em>END CREDITS</em></button>
+    </nav>
+  </div>
+
+  <div class="ari-offer" id="ari-offer" hidden>
+    <img src="ari-hello.webp" alt="ARI" draggable="false">
+    <div><small>OPTIONAL AUDIO GUIDE</small><b>ARI может озвучивать сцены.</b></div>
+    <button type="button" data-ari-enable>ВКЛЮЧИТЬ</button>
+    <button class="ari-offer-close" type="button" data-ari-dismiss aria-label="Не сейчас">×</button>
+  </div>
+
+  <aside class="ari-assistant" id="ari-assistant" hidden aria-live="polite">
+    <button class="ari-avatar" type="button" id="ari-avatar"><img id="ari-image" src="ari-hello.webp" alt="ARI" draggable="false"><span>ARI</span></button>
+    <div class="ari-dialog" id="ari-dialog"><small>AUDIO GUIDE</small><p id="ari-text"></p><button type="button" id="ari-close">×</button></div>
+    <audio id="ari-voice" preload="auto"></audio>
+  </aside>
+
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <button type="button" class="lightbox-close" data-lightbox-close>×</button>
+    <figure><img id="lightbox-image" src="" alt="" draggable="false"><figcaption id="lightbox-caption"></figcaption></figure>
+  </div>
+</body>
+</html>
